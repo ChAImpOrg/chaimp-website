@@ -6,9 +6,6 @@
   <meta name="description" content="ChAImp — Championing Nonprofits through AI and Mission Progression. More Mission. Less Admin." />
   <meta name="keywords" content="nonprofit AI, digital transformation, RAG architecture, nonprofit technology, Claude AI, governed AI" />
   <title>ChAImp — More Mission. Less Admin.</title>
-  <link rel="icon" type="image/png" href="ChAImp_Logo.png" />
-  <link rel="apple-touch-icon" href="ChAImp_Logo.png" />
-  <meta name="theme-color" content="#0D1B2A" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -532,16 +529,19 @@
     }
 
     .founder-avatar {
-      width: 100px; height: 100px;
+      width: 120px; height: 120px;
       border-radius: 50%;
-      background: var(--navy);
       margin: 0 auto 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.5rem;
-      color: var(--teal);
+      overflow: hidden;
+      border: 3px solid var(--teal);
+      box-shadow: 0 8px 24px rgba(79,179,169,0.2);
+    }
+
+    .founder-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
     }
 
     .founder-name {
@@ -757,6 +757,7 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-content">
+      <div class="hero-badge">501(c)(3) Nonprofit · Est. 2025</div>
       <h1>Your mission<br>deserves <em>more</em><br>than admin.</h1>
       <p class="hero-sub">ChAImp champions small and medium nonprofits — bringing enterprise-grade AI and digital transformation to the organizations that need it most, but can least afford it.</p>
       <div class="hero-actions">
@@ -888,7 +889,9 @@
   <section id="founder">
     <div class="founder-grid">
       <div class="founder-card fade-up">
-        <div class="founder-avatar">JW</div>
+        <div class="founder-avatar">
+          <img src="Headshot.jpg" alt="James Whelan — Founder & Executive Director, ChAImp" />
+        </div>
         <div class="founder-name">James Whelan</div>
         <div class="founder-title">Founder & Executive Director</div>
         <div class="founder-tags">
@@ -908,6 +911,8 @@
           The same rigor, reliability, and pragmatism he applied to enterprise-scale challenges at Microsoft now goes to work for the nonprofits that need it most. Organizations with big missions, lean teams, and technology that too often gets in the way.
           <br><br>
           <strong>ChAImp is his give-back.</strong> Built with Claude, Copilot, React, and Vercel. Delivered free to qualifying nonprofits. Rooted in the belief that the best technology should serve the best missions.
+          <br><br>
+          <em style="color: var(--teal); font-style: italic;">The name ChAImp comes from somewhere personal — a reminder that championing others is the most important thing any of us can do.</em>
         </p>
         <br>
         <a href="https://linkedin.com/in/jwhelanmsft" target="_blank" class="btn-primary">Connect on LinkedIn →</a>
