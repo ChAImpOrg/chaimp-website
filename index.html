@@ -450,6 +450,117 @@
       text-transform: uppercase;
     }
 
+    /* ── CASE STUDIES ── */
+    .casestudies-section {
+      background: var(--warm-white);
+      max-width: 100%;
+      padding: 6rem 3rem;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .casestudies-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .casestudies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .casestudy-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--light-gray);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .casestudy-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(13,27,42,0.08);
+    }
+
+    .casestudy-placeholder {
+      background: rgba(79,179,169,0.04);
+      border: 1.5px dashed var(--teal);
+    }
+
+    .casestudy-status {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .casestudy-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .casestudy-type {
+      font-size: 0.82rem;
+      color: var(--teal);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .casestudy-card p {
+      font-size: 0.92rem;
+      color: var(--gray);
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    .casestudy-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.25rem;
+    }
+
+    .cs-tag {
+      background: var(--cream);
+      border: 1px solid var(--light-gray);
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .casestudy-coming {
+      font-size: 0.85rem !important;
+      color: var(--blue) !important;
+      font-weight: 600 !important;
+      flex-grow: 0 !important;
+    }
+
+    .casestudy-cta {
+      display: inline-flex;
+      align-items: center;
+      background: var(--teal);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+
+    .casestudy-cta:hover { background: var(--teal-light); }
+
     /* ── PROMISE ── */
     .promise-section {
       background: var(--navy);
@@ -728,8 +839,9 @@
       .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
       .stat:last-child, .stat:nth-last-child(2) { border-bottom: none; }
       section { padding: 4rem 1.5rem; }
-      .services-section, .promise-section, .cta-section { padding: 4rem 1.5rem; }
+      .services-section, .promise-section, .cta-section, .casestudies-section { padding: 4rem 1.5rem; }
       .services-grid { grid-template-columns: 1fr; }
+      .casestudies-grid { grid-template-columns: 1fr; }
       .serve-grid { grid-template-columns: 1fr; }
       .promise-pillars { grid-template-columns: 1fr; }
       .founder-grid { grid-template-columns: 1fr; }
@@ -749,6 +861,7 @@
     <ul class="nav-links">
       <li><a href="#services">What We Do</a></li>
       <li><a href="#serve">Who We Serve</a></li>
+      <li><a href="#casestudies">Case Studies</a></li>
       <li><a href="#founder">About</a></li>
       <li><a href="https://linkedin.com/in/jwhelanmsft" target="_blank" class="nav-cta">Get in Touch</a></li>
     </ul>
@@ -759,7 +872,7 @@
     <div class="hero-content">
       <div class="hero-badge">501(c)(3) Pending · Est. 2026</div>
       <h1>Your mission<br>deserves <em>more</em><br>than admin.</h1>
-      <p class="hero-sub">ChAImp champions small and medium nonprofits — bringing enterprise-grade AI and digital transformation to the organizations that need it most, but can least afford it.</p>
+      <p class="hero-sub">ChAImp champions small and medium nonprofits — bringing enterprise-grade AI and digital transformation to the organizations that need it most, but can least afford it. <strong style="color: var(--teal);">For qualifying nonprofits, our work is pro bono. Always.</strong></p>
       <div class="hero-actions">
         <a href="https://linkedin.com/in/jwhelanmsft" target="_blank" class="btn-primary">
           Let's Talk →
@@ -858,6 +971,58 @@
     </div>
   </section>
 
+  <!-- CASE STUDIES -->
+  <div class="casestudies-section" id="casestudies">
+    <div class="casestudies-inner">
+      <span class="section-label">Case Studies</span>
+      <h2 class="section-title">Real nonprofits.<br>Real impact.</h2>
+      <p class="section-body">Our engagements are active and ongoing. Full case studies — including outcomes, tools used, and lessons learned — are being documented and will be published here soon. Check back regularly.</p>
+
+      <div class="casestudies-grid">
+
+        <div class="casestudy-card fade-up">
+          <div class="casestudy-status">🐾 Active</div>
+          <h3>Bull Terrier Rescue, Inc.</h3>
+          <p class="casestudy-type">Website Modernization · Digital Transformation</p>
+          <p>A 501(c)(3) rescue organization serving California, Nevada, Oregon, and Washington — saving Bull Terriers in crisis since 1995. Their legacy WordPress site was broken and directing visitors to Facebook to find available dogs. We rebuilt their entire web presence from scratch.</p>
+          <div class="casestudy-tags">
+            <span class="cs-tag">React</span>
+            <span class="cs-tag">Claude Code</span>
+            <span class="cs-tag">Vercel</span>
+          </div>
+          <p class="casestudy-coming">Full case study coming soon →</p>
+        </div>
+
+        <div class="casestudy-card fade-up">
+          <div class="casestudy-status">🔄 Active</div>
+          <h3>Client 2</h3>
+          <p class="casestudy-type">AI Integration · Coming Soon</p>
+          <p>Our second active pro bono engagement is currently underway. Details will be published here with the client's permission once the project reaches a shareable milestone.</p>
+          <div class="casestudy-tags">
+            <span class="cs-tag">Claude</span>
+            <span class="cs-tag">RAG Architecture</span>
+            <span class="cs-tag">Low-Code</span>
+          </div>
+          <p class="casestudy-coming">Full case study coming soon →</p>
+        </div>
+
+        <div class="casestudy-card casestudy-placeholder fade-up">
+          <div class="casestudy-status">✨ Could Be You</div>
+          <h3>Your Nonprofit Here</h3>
+          <p class="casestudy-type">Your Challenge · Your Mission</p>
+          <p>We're actively looking for our next pro bono engagement. If your nonprofit is wrestling with technology, administration, or AI adoption — let's talk. No jargon. No invoice. Just mission.</p>
+          <div class="casestudy-tags">
+            <span class="cs-tag">Pro Bono</span>
+            <span class="cs-tag">All Technologies</span>
+            <span class="cs-tag">Your Stack</span>
+          </div>
+          <a href="https://linkedin.com/in/jwhelanmsft" target="_blank" class="casestudy-cta">Start the Conversation →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- PROMISE -->
   <div class="promise-section">
     <div class="promise-inner">
@@ -903,11 +1068,11 @@
       </div>
       <div>
         <span class="section-label">About the Founder</span>
-        <h2 class="section-title">Enterprise expertise.<br>Given back.</h2>
+        <h2 class="section-title">British-born.<br>American-made.<br>Mission-driven.</h2>
         <p class="founder-story">
           After <strong>25+ years at Microsoft</strong> — across Engineering, Product, and Support — James Whelan founded ChAImp to do something that hits different.
           <br><br>
-          The same rigor, reliability, and pragmatism he applied to enterprise-scale challenges at Microsoft now goes to work for the nonprofits that need it most. Organizations with big missions, lean teams, and technology that too often gets in the way.
+          British-born and American-made, the same rigor, reliability, and pragmatism he applied to enterprise-scale challenges at Microsoft now goes to work for the nonprofits that need it most. Organizations with big missions, lean teams, and technology that too often gets in the way.
           <br><br>
           <strong>ChAImp is his give-back.</strong> Built with Claude, Copilot, React, and Vercel. Delivered free to qualifying nonprofits. Rooted in the belief that the best technology should serve the best missions.
           <br><br>
@@ -925,6 +1090,7 @@
       <span class="section-label">Get Involved</span>
       <h2 class="section-title">Ready for more mission?</h2>
       <p class="section-body">If you lead or support a nonprofit and want to explore what AI and modern technology could do for your organization — let's talk. No jargon. No pressure. Just a conversation.</p>
+      <p class="section-body" style="font-style: italic; color: var(--teal); margin-top: -1.5rem;">There's no invoice coming. For qualifying nonprofits, ChAImp's work is entirely pro bono — because the mission matters more than the margin.</p>
       <div class="cta-actions">
         <a href="https://linkedin.com/in/jwhelanmsft" target="_blank" class="btn-primary">Start the Conversation →</a>
         <a href="https://github.com/ChAImpNP" target="_blank" class="btn-secondary">View on GitHub</a>
