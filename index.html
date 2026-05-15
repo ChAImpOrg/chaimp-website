@@ -22,7 +22,13 @@
       --warm-white: #FDFCFA;
       --gray: #6B7280;
       --light-gray: #E8E4DC;
+      --color-accent-gold: #DAA520;
+      --color-accent-gold-dark: #B8860B;
+      --color-accent-gold-tint: rgba(218,165,32,0.12);
     }
+
+    .accent-gold { color: var(--color-accent-gold); }
+    .accent-gold-dark { color: var(--color-accent-gold-dark); }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -36,7 +42,7 @@
     .nav-wordmark span { color: var(--teal); }
     .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
     .nav-links a { text-decoration: none; color: var(--gray); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--navy); }
+    .nav-links a:hover { color: var(--color-accent-gold-dark); }
     .nav-cta { background: var(--teal) !important; color: white !important; padding: 0.6rem 1.4rem; border-radius: 100px; font-weight: 600 !important; transition: background 0.2s !important; }
     .nav-cta:hover { background: var(--teal-light) !important; }
 
@@ -48,7 +54,7 @@
     .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(79,179,169,0.12); color: var(--teal); padding: 0.4rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 1.5rem; border: 1px solid rgba(79,179,169,0.2); }
     .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; }
     .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.8rem, 5vw, 4.2rem); line-height: 1.1; color: var(--navy); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-    .hero h1 em { font-style: italic; color: var(--teal); }
+    .hero h1 em { font-style: italic; color: var(--color-accent-gold-dark); }
     .hero-sub { font-size: 1.15rem; color: var(--gray); line-height: 1.7; margin-bottom: 1rem; max-width: 480px; font-weight: 400; }
     .hero-human { font-size: 1rem; color: var(--teal); font-weight: 600; font-style: italic; margin-bottom: 2.5rem; max-width: 480px; }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -65,11 +71,12 @@
     .stat { text-align: center; padding: 1rem; border-right: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
     .stat:last-child { border-right: none; }
     .stat-number { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--teal); line-height: 1.1; margin-bottom: 0; }
+    .stat-number.accent-gold { color: var(--color-accent-gold); }
     .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.6); font-weight: 400; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.4; }
 
     /* ── SECTION COMMON ── */
     section { padding: 6rem 3rem; max-width: 1200px; margin: 0 auto; }
-    .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-gold-dark); margin-bottom: 1rem; }
     .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.15; color: var(--navy); margin-bottom: 1rem; letter-spacing: -0.02em; }
     .section-body { font-size: 1.05rem; color: var(--gray); line-height: 1.75; max-width: 640px; margin-bottom: 3rem; }
 
@@ -95,6 +102,7 @@
     .serve-visual::before { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(79,179,169,0.15) 0%, transparent 70%); }
     .serve-quote { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: white; line-height: 1.4; margin-bottom: 1.5rem; font-style: italic; }
     .serve-quote span { color: var(--teal); }
+    .serve-quote span.accent-gold { color: var(--color-accent-gold); }
     .serve-attribution { font-size: 0.85rem; color: rgba(255,255,255,0.5); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
 
     /* ── CASE STUDIES ── */
@@ -104,7 +112,7 @@
     .casestudy-card { background: white; border-radius: 16px; padding: 2rem; border: 1px solid var(--light-gray); display: flex; flex-direction: column; gap: 0.75rem; transition: transform 0.2s, box-shadow 0.2s; }
     .casestudy-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,27,42,0.08); }
     .casestudy-placeholder { background: rgba(79,179,169,0.04); border: 1.5px dashed var(--teal); }
-    .casestudy-status { font-size: 0.8rem; font-weight: 700; color: var(--teal); letter-spacing: 0.05em; text-transform: uppercase; }
+    .casestudy-status { display: inline-block; align-self: flex-start; font-size: 0.8rem; font-weight: 700; color: var(--color-accent-gold-dark); letter-spacing: 0.05em; text-transform: uppercase; background: var(--color-accent-gold-tint); padding: 0.3rem 0.75rem; border-radius: 100px; }
     .casestudy-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--navy); line-height: 1.2; }
     .casestudy-type { font-size: 0.82rem; color: var(--teal); font-weight: 600; letter-spacing: 0.03em; }
     .casestudy-card p { font-size: 0.92rem; color: var(--gray); line-height: 1.65; flex-grow: 1; }
@@ -117,12 +125,12 @@
     /* ── PROMISE ── */
     .promise-section { background: var(--navy); max-width: 100%; padding: 6rem 3rem; text-align: center; }
     .promise-inner { max-width: 800px; margin: 0 auto; }
-    .promise-section .section-label { color: var(--teal-light); }
+    .promise-section .section-label { color: var(--color-accent-gold); }
     .promise-section .section-title { color: white; margin-bottom: 1.5rem; }
     .promise-section .section-body { color: rgba(255,255,255,0.65); margin: 0 auto 3rem; }
     .promise-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
     .pillar { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; text-align: left; }
-    .pillar-number { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: var(--teal); opacity: 0.4; line-height: 1; margin-bottom: 0.75rem; }
+    .pillar-number { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: var(--color-accent-gold); line-height: 1; margin-bottom: 0.75rem; }
     .pillar h3 { font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.5rem; }
     .pillar p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
 
@@ -162,19 +170,19 @@
     .footer-mission { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.6; max-width: 320px; }
     .footer-nav { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
     .footer-nav a { text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.9rem; transition: color 0.2s; }
-    .footer-nav a:hover { color: var(--teal); }
+    .footer-nav a:hover { color: var(--color-accent-gold); }
     .footer-contact-list { display: flex; flex-direction: column; gap: 1rem; }
     .footer-contact-item { display: flex; flex-direction: column; gap: 0.2rem; }
     .footer-contact-label { font-size: 0.7rem; color: rgba(255,255,255,0.4); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
     .footer-contact-value { font-size: 0.95rem; color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; transition: color 0.2s; line-height: 1.5; }
-    a.footer-contact-value:hover { color: var(--teal); }
+    a.footer-contact-value:hover { color: var(--color-accent-gold); }
     .footer-legal { max-width: 1200px; margin: 3rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; }
     .footer-legal-left { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.78rem; color: rgba(255,255,255,0.4); }
     .footer-legal-left .sep { color: rgba(255,255,255,0.2); }
     .footer-legal-left strong { color: rgba(255,255,255,0.6); font-weight: 600; letter-spacing: 0.03em; }
     .footer-social { display: flex; gap: 1.25rem; }
     .footer-social a { color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; transition: color 0.2s; font-weight: 500; }
-    .footer-social a:hover { color: var(--teal); }
+    .footer-social a:hover { color: var(--color-accent-gold); }
 
     /* ── ANIMATIONS ── */
     .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -231,7 +239,7 @@
       <p class="hero-sub">ChAImp champions community-level nonprofits — bringing enterprise-grade AI and digital transformation to the organizations doing the most important work with the least resources. <strong style="color: var(--teal);">For many of the organizations we work with, our engagement is entirely pro bono. Every conversation starts the same way — tell us about your mission.</strong></p>
       <p class="hero-human">We believe AI should amplify human connection — never replace it.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Let's Talk →</a>
+        <a href="#contact" class="btn-primary">Let's Talk <span class="accent-gold">→</span></a>
         <a href="#services" class="btn-secondary">What We Do</a>
       </div>
     </div>
@@ -243,19 +251,19 @@
   <!-- STATS -->
   <div class="stats">
     <div class="stat">
-      <div class="stat-number">Enterprise</div>
+      <div class="stat-number accent-gold">Enterprise</div>
       <div class="stat-label">Grade Technology Standard</div>
     </div>
     <div class="stat">
-      <div class="stat-number">25+</div>
+      <div class="stat-number accent-gold">25+</div>
       <div class="stat-label">Years Across the Full Microsoft Ecosystem</div>
     </div>
     <div class="stat">
-      <div class="stat-number">100%</div>
-      <div class="stat-label">You Own Everything We Build</div>
+      <div class="stat-number accent-gold">No Lock-In</div>
+      <div class="stat-label">Yours to Keep, Hand Off, or Build On</div>
     </div>
     <div class="stat">
-      <div class="stat-number">Open Door</div>
+      <div class="stat-number accent-gold">Open Door</div>
       <div class="stat-label">How We Engage</div>
     </div>
   </div>
@@ -313,17 +321,17 @@
       <div>
         <span class="section-label">Who We Serve</span>
         <h2 class="section-title">Built for nonprofits ready to do more.</h2>
-        <p class="section-body">We work with community-level nonprofits across the United States who are ready to embrace technology responsibly — organizations doing more with less, every single day.</p>
+        <p class="section-body">We work with community-level nonprofits across the United States who are ready to embrace technology responsibly — organizations with big missions, lean teams, and the determination to make every resource count.</p>
         <ul class="serve-list">
           <li>Organizations with big missions and lean teams</li>
           <li>Nonprofits whose technology hasn't kept pace — not for lack of wanting, but lack of capacity</li>
           <li>Leaders who want AI but don't know where to safely start</li>
           <li>Organizations that know technology could transform their impact — but need a trusted partner to get them there</li>
-          <li>Teams who want to own their technology — not depend on it</li>
+          <li>Nonprofits that want freedom to choose what's next — not a vendor relationship they can't escape</li>
         </ul>
       </div>
       <div class="serve-visual">
-        <p class="serve-quote">"More Mission.<br><span>Less Admin.</span>"</p>
+        <p class="serve-quote">"More Mission<span class="accent-gold">.</span><br><span>Less Admin<span class="accent-gold">.</span></span>"</p>
         <p class="serve-attribution">The ChAImp Promise</p>
       </div>
     </div>
@@ -347,7 +355,7 @@
             <span class="cs-tag">Claude Code</span>
             <span class="cs-tag">Vercel</span>
           </div>
-          <p class="casestudy-coming">Full case study coming soon →</p>
+          <p class="casestudy-coming">Full case study coming soon <span class="accent-gold-dark">→</span></p>
         </div>
         <div class="casestudy-card fade-up">
           <div class="casestudy-status">🔄 Active</div>
@@ -359,7 +367,7 @@
             <span class="cs-tag">Knowledge Systems</span>
             <span class="cs-tag">Low-Code</span>
           </div>
-          <p class="casestudy-coming">Full case study coming soon →</p>
+          <p class="casestudy-coming">Full case study coming soon <span class="accent-gold-dark">→</span></p>
         </div>
         <div class="casestudy-card casestudy-placeholder fade-up">
           <div class="casestudy-status">✨ Could Be You</div>
@@ -371,7 +379,7 @@
             <span class="cs-tag">Any Technology</span>
             <span class="cs-tag">Your Challenge</span>
           </div>
-          <a href="#contact" class="casestudy-cta">Start the Conversation →</a>
+          <a href="#contact" class="casestudy-cta">Start the Conversation <span class="accent-gold">→</span></a>
         </div>
       </div>
     </div>
@@ -397,7 +405,7 @@
         <div class="pillar fade-up">
           <div class="pillar-number">03</div>
           <h3>Sustainable</h3>
-          <p>We build with your team, not just for them. You own what we create — fully and forever.</p>
+          <p>We build to last — and to be handed off. Whether you run it, a volunteer picks it up, or a future partner takes over, what we create works without us.</p>
         </div>
       </div>
     </div>
@@ -425,7 +433,7 @@
         <p class="founder-story">
           After <strong>25+ years at Microsoft</strong> — across Engineering, Product, and Support — James Whelan founded ChAImp to do something that hits different.
           <br><br>
-          British by birth and American by choice, the same rigor, reliability, and pragmatism he applied across the full Microsoft ecosystem now goes to work for community-level nonprofits doing more with less every day. Organizations that know technology could transform their impact — but need a trusted partner to get them there.
+          British by birth and American by choice, James spent 25 years solving problems inside Microsoft — for enterprise customers and the teams who served them. He now brings that same rigor, reliability, and pragmatism to community-level nonprofits — organizations that know technology could transform their impact, but need a trusted partner to get them there.
           <br><br>
           <strong>ChAImp is his give-back.</strong> For many of the organizations he works with, the engagement is entirely pro bono. Built with whatever technology serves the mission best — because the outcome always matters more than the stack.
           <br><br>
@@ -434,8 +442,9 @@
           <em style="color: var(--teal); font-style: italic;">The name ChAImp — pronounced "champ" — comes from somewhere personal — a reminder that championing others is the most important thing any of us can do.</em>
         </p>
         <br>
-        <a href="https://linkedin.com/in/whelanjamesm" target="_blank" class="btn-primary">Connect on LinkedIn →</a>
+        <a href="https://linkedin.com/in/whelanjamesm" target="_blank" class="btn-primary">Connect on LinkedIn <span class="accent-gold">→</span></a>
         <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--gray); font-style: italic;">Open to the right conversation — whether that's a nonprofit needing a champion or an organisation building something that matters.</p>
+        <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--gray); font-style: italic;">And once we've worked together, the door stays open. If your needs change down the road, we're still here.</p>
       </div>
     </div>
   </section>
@@ -449,7 +458,7 @@
       <p class="section-body" style="font-style: italic; color: var(--teal); margin-top: -1.5rem;">For many of the organizations we work with, our engagement is entirely pro bono. Every conversation starts the same way — tell us about your mission.</p>
       <p class="section-body" style="font-size: 0.95rem; color: var(--gray); margin-top: -1.5rem;">No unexpected costs. No complicated onboarding. We handle the complexity so you don't have to.</p>
       <div class="cta-actions">
-        <a href="mailto:james.whelan@chaimp.org" class="btn-primary">Start the Conversation →</a>
+        <a href="mailto:james.whelan@chaimp.org" class="btn-primary">Start the Conversation <span class="accent-gold">→</span></a>
         <a href="https://calendar.app.google/QcHcVh2RBYvoTZH67" target="_blank" rel="noopener" class="btn-secondary">📅 Book a Call or Coffee</a>
         <a href="tel:+14155069220" class="btn-secondary">📞 Call or Text (415) 506-9220</a>
         <a href="https://github.com/ChAImpOrg" target="_blank" class="btn-secondary">View on GitHub</a>
@@ -477,7 +486,7 @@
     <div class="footer-grid">
       <div class="footer-brand-block">
         <div class="footer-brand">Ch<span>AI</span>mp</div>
-        <div class="footer-tagline">More Mission. Less Admin.</div>
+        <div class="footer-tagline">More Mission<span class="accent-gold">.</span> Less Admin<span class="accent-gold">.</span></div>
         <p class="footer-mission">Championing community-level nonprofits through AI and mission progression. Enterprise-grade technology, nonprofit heart.</p>
       </div>
       <div>
