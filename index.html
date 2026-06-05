@@ -141,6 +141,15 @@
     .founder-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .founder-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 0.25rem; }
     .founder-title { font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .board-card { background: var(--cream); border-radius: 24px; padding: 2.5rem 1.75rem; text-align: center; border: 1px solid var(--light-gray); }
+    .board-avatar { width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: var(--teal); color: white; font-family: 'DM Serif Display', serif; font-size: 2.1rem; letter-spacing: 0.05em; border: 3px solid var(--teal); box-shadow: 0 8px 24px rgba(79,179,169,0.2); overflow: hidden; }
+    .board-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .board-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.25rem; white-space: nowrap; }
+    .board-title { font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .board-bio { font-size: 0.9rem; color: var(--gray); font-style: italic; }
+    .board-email { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; padding: 0.45rem 1rem; font-size: 0.85rem; font-weight: 600; color: var(--teal); text-decoration: none; border: 1px solid var(--teal); border-radius: 999px; transition: background 0.2s, color 0.2s; }
+    .board-email:hover { background: var(--teal); color: white; }
     .founder-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
     .tag { background: white; border: 1px solid var(--light-gray); padding: 0.3rem 0.75rem; border-radius: 100px; font-size: 0.78rem; color: var(--gray); font-weight: 500; }
     .founder-story { font-size: 1.05rem; color: var(--gray); line-height: 1.8; }
@@ -211,6 +220,7 @@
       .serve-grid { grid-template-columns: 1fr; }
       .promise-pillars { grid-template-columns: 1fr; }
       .founder-grid { grid-template-columns: 1fr; }
+      .board-grid { grid-template-columns: 1fr; }
       footer { padding: 3rem 1.5rem 2rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer-legal { flex-direction: column; align-items: flex-start; text-align: left; }
@@ -231,6 +241,7 @@
       <li><a href="#serve">Who We Serve</a></li>
       <li><a href="#casestudies">Case Studies</a></li>
       <li><a href="#founder">About</a></li>
+      <li><a href="#board">Board</a></li>
       <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
     </ul>
   </nav>
@@ -238,9 +249,8 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-content">
-      <div class="hero-badge">501(c)(3) Pending · Est. 2026</div>
       <h1>Your mission<br>deserves <em>more</em><br>than admin.</h1>
-      <p class="hero-sub">ChAImp champions community-level nonprofits — bringing enterprise-grade AI and digital transformation to organizations doing meaningful work, often without the resources their mission deserves. <strong style="color: var(--teal);">For many of the organizations we work with, our engagement is entirely pro bono. Every conversation starts the same way — tell us about your mission.</strong></p>
+      <p class="hero-sub">ChAImp champions community-level nonprofits — bringing enterprise-grade AI and digital transformation to organizations doing meaningful work, often without the resources their mission deserves. <strong style="color: var(--teal);">Every conversation starts the same way — tell us about your mission.</strong></p>
       <p class="hero-human">We believe AI should amplify human connection — never replace it.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Let's Talk <span class="accent-gold">→</span></a>
@@ -454,6 +464,50 @@
     </div>
   </section>
 
+  <!-- BOARD -->
+  <section id="board">
+    <span class="section-label">Our Board</span>
+    <h2 class="section-title">Guided by people<br>who care.</h2>
+    <p class="section-body">ChAImp is shaped by a board that shares the mission. Full titles and bios are being finalized and will be published here soon.</p>
+    <div class="board-grid">
+      <div class="board-card fade-up">
+        <div class="board-avatar"><img src="Headshot.jpg" alt="James Whelan — Founder & Executive Director, ChAImp" /></div>
+        <div class="board-name">James Whelan</div>
+        <div class="board-title">Founder &amp; Executive Director · Ex-Officio</div>
+        <p class="board-bio">See About above.</p>
+        <a href="mailto:james.whelan@chaimp.org" class="board-email"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>Email</a>
+      </div>
+      <div class="board-card fade-up">
+        <div class="board-avatar">AC</div>
+        <div class="board-name">Andrew Chesser</div>
+        <div class="board-title">Founding President</div>
+        <p class="board-bio">Bio coming soon.</p>
+        <a href="mailto:andrew.chesser@chaimp.org" class="board-email"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>Email</a>
+      </div>
+      <div class="board-card fade-up">
+        <div class="board-avatar">SC</div>
+        <div class="board-name">Sarah Ciambrone</div>
+        <div class="board-title">Title coming soon</div>
+        <p class="board-bio">Bio coming soon.</p>
+        <a href="mailto:sarah.ciambrone@chaimp.org" class="board-email"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>Email</a>
+      </div>
+      <div class="board-card fade-up">
+        <div class="board-avatar">CO</div>
+        <div class="board-name">Cathy Oaks Hayes</div>
+        <div class="board-title">Founding Treasurer</div>
+        <p class="board-bio">Bio coming soon.</p>
+        <a href="mailto:cathy.oaks@chaimp.org" class="board-email"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>Email</a>
+      </div>
+      <div class="board-card fade-up">
+        <div class="board-avatar">AS</div>
+        <div class="board-name">Ashu Samra</div>
+        <div class="board-title">Founding Technical Advisor</div>
+        <p class="board-bio">Bio coming soon.</p>
+        <a href="mailto:ashu.samra@chaimp.org" class="board-email"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>Email</a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <div class="cta-section" id="contact">
     <div class="cta-inner">
@@ -505,6 +559,7 @@
           <li><a href="#serve">Who We Serve</a></li>
           <li><a href="#casestudies">Case Studies</a></li>
           <li><a href="#founder">About</a></li>
+          <li><a href="#board">Board</a></li>
           <li><a href="#contact">Get in Touch</a></li>
         </ul>
       </div>
@@ -534,7 +589,7 @@
       <div class="footer-legal-left">
         <span>© 2026 ChAImp</span>
         <span class="sep">·</span>
-        <span><strong>501(c)(3) Pending</strong></span>
+        <span>ChAImp is a registered Washington State nonprofit corporation. 501(c)(3) tax-exempt status is currently pending</span>
         <span class="sep">·</span>
         <span>EIN: <strong>42-2468355</strong></span>
       </div>
