@@ -145,6 +145,9 @@
     .founder-title { font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; }
     .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
     .board-card { background: var(--cream); border-radius: 24px; padding: 2.5rem 1.75rem; text-align: center; border: 1px solid var(--light-gray); }
+    a.board-card { transition: transform 0.2s, box-shadow 0.2s; }
+    a.board-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,27,42,0.08); }
+    a.board-card:focus-visible { outline: 2px solid var(--color-accent-gold-dark); outline-offset: 3px; }
     .board-avatar { width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: var(--teal); color: white; font-family: 'DM Serif Display', serif; font-size: 2.1rem; letter-spacing: 0.05em; border: 3px solid var(--teal); box-shadow: 0 8px 24px rgba(79,179,169,0.2); overflow: hidden; }
     .board-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .board-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.25rem; white-space: nowrap; }
@@ -437,7 +440,7 @@
     <div class="founder-grid">
       <div class="founder-card fade-up">
         <div class="founder-avatar">
-          <img src="Headshot.jpg" alt="James Whelan — Founder & Executive Director, ChAImp" />
+          <img src="James_Whelan.jpg" alt="James Whelan, Founder & Executive Director of ChAImp" />
         </div>
         <div class="founder-name">James Whelan</div>
         <div class="founder-title">Founder & Executive Director</div>
@@ -474,36 +477,36 @@
     <h2 class="section-title">Guided by people<br>who care.</h2>
     <p class="section-body">ChAImp is shaped by a board that shares the mission. Full titles and bios are being finalized and will be published here soon.</p>
     <div class="board-grid">
-      <div class="board-card fade-up">
-        <div class="board-avatar"><img src="Headshot.jpg" alt="James Whelan — Founder & Executive Director, ChAImp" /></div>
+      <a href="#founder" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
+        <div class="board-avatar"><img src="James_Whelan.jpg" alt="James Whelan, Founder & Executive Director of ChAImp" /></div>
         <div class="board-name">James Whelan</div>
         <div class="board-title">Founder &amp; Executive Director · Ex-Officio</div>
-        <p class="board-bio">See About above.</p>
-      </div>
+        <p class="board-bio" style="color: var(--teal); font-weight: 600;">See About above <span class="accent-gold">→</span></p>
+      </a>
       <div class="board-card fade-up">
         <div class="board-avatar">AC</div>
         <div class="board-name">Andrew Chesser</div>
         <div class="board-title">Founding President</div>
         <p class="board-bio">Bio coming soon.</p>
       </div>
-      <div class="board-card fade-up">
-        <div class="board-avatar">SC</div>
+      <a href="board.html" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
+        <div class="board-avatar"><img src="Sarah_Ciambrone.jpg" alt="Sarah Ciambrone, Founding Director of Mission & Outreach at ChAImp" /></div>
         <div class="board-name">Sarah Ciambrone</div>
-        <div class="board-title">Title coming soon</div>
-        <p class="board-bio">Bio coming soon.</p>
-      </div>
+        <div class="board-title">Founding Director of Mission &amp; Outreach</div>
+        <p class="board-bio" style="color: var(--teal); font-weight: 600;">Read Sarah's full bio <span class="accent-gold">→</span></p>
+      </a>
       <div class="board-card fade-up">
         <div class="board-avatar">CO</div>
         <div class="board-name">Cathy Oaks Hayes</div>
         <div class="board-title">Founding Treasurer</div>
         <p class="board-bio">Bio coming soon.</p>
       </div>
-      <div class="board-card fade-up">
-        <div class="board-avatar">AS</div>
+      <a href="board.html" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
+        <div class="board-avatar"><img src="Ashu_Samra.jpg" alt="Ashu Samra, Founding Technical Lead at ChAImp" /></div>
         <div class="board-name">Ashu Samra</div>
-        <div class="board-title">Founding Technical Advisor</div>
-        <p class="board-bio">Bio coming soon.</p>
-      </div>
+        <div class="board-title">Founding Technical Lead</div>
+        <p class="board-bio" style="color: var(--teal); font-weight: 600;">Read Ashu's full bio <span class="accent-gold">→</span></p>
+      </a>
     </div>
   </section>
 
