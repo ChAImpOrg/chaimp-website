@@ -106,6 +106,8 @@
     .offering-built-with { font-size: 0.82rem; color: var(--navy); font-weight: 600; margin-top: 0.25rem; }
     .offering-built-with span { color: var(--gray); font-weight: 500; }
     .offering-logo { display: block; height: auto; max-height: 140px; width: auto; max-width: 100%; object-fit: contain; margin-bottom: 0.5rem; }
+    .offering-logo-text { font-family: 'DM Serif Display', serif; font-size: 1.7rem; color: var(--navy); font-weight: 400; margin-bottom: 0.5rem; }
+    .offering-logo-text span { color: var(--teal); }
     .offering-domain { display: inline-flex; align-items: center; gap: 0.4rem; align-self: flex-start; margin-top: auto; padding: 0.55rem 1.1rem; background: var(--navy); color: white; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: background 0.2s, transform 0.2s; }
     .offering-domain:hover { background: var(--navy-mid); transform: translateY(-1px); }
     .offering-domain .accent-gold { color: var(--color-accent-gold); }
@@ -266,6 +268,21 @@
           <span class="meta-tag">AI-Enhanced Admin</span>
         </div>
         <a href="https://cartoncrew.online" target="_blank" rel="noopener" class="offering-domain">Visit cartoncrew.online <span class="accent-gold">→</span></a>
+      </div>
+      <div class="offering-card fade-up">
+        <!-- TODO: drop CartonCrewStudio_Logo.png in the repo root and the text wordmark fallback below is replaced automatically -->
+        <img class="offering-logo" src="CartonCrewStudio_Logo.png" alt="CartonCrewStudio" onerror="this.outerHTML=`<div class='offering-logo-text'>CartonCrew<span>Studio</span></div>`" />
+        <h3>The nonprofit CRM that speaks gallery.</h3>
+        <p class="offering-tagline">Artists, artworks, exhibitions, and collectors — first-class, not crammed into a generic contact field.</p>
+        <p>CartonCrewStudio is CartonCrew tuned for nonprofit art galleries and community studios: the same lean CRM, but it knows your world. Instead of bending a one-size-fits-all "constituent" record around an artist, or filing a piece under "notes," it gives you the things you actually work with — artists, works, exhibitions, patrons, and programs. Underneath, the same AI relationship memory keeps track of which collector follows which artist, what a patron bought or pledged, and who's due for a show — so the conversations that keep a gallery alive stay personal. Built on the CRM we run ChAImp on, specialized for the galleries and studios that run on a shoestring and a mission.</p>
+        <div class="meta">
+          <span class="meta-tag">CRM</span>
+          <span class="meta-tag">Art Galleries</span>
+          <span class="meta-tag">Community Studios</span>
+          <span class="meta-tag">AI-Enhanced Admin</span>
+        </div>
+        <p class="offering-tagline" style="color: var(--color-accent-gold-dark); font-style: normal; margin-top: 0.25rem;">✨ New &mdash; a CartonCrew spin-off, currently in development.</p>
+        <a href="https://cartoncrew.art" target="_blank" rel="noopener" class="offering-domain">Visit cartoncrew.art <span class="accent-gold">→</span></a>
       </div>
       <div class="offering-card fade-up">
         <img class="offering-logo" src="RescueCentral_Logo.png" alt="RescueCentral" />
