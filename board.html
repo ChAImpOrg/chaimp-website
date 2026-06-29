@@ -39,6 +39,7 @@
     .nav-logo img { height: 40px; width: auto; }
     .nav-wordmark { font-family: 'Nunito', sans-serif; font-weight: 600; font-size: 1.3rem; color: var(--navy); letter-spacing: -0.02em; }
     .nav-wordmark span { color: var(--teal); }
+    .nav-pron { font-size: 0.78rem; font-weight: 600; color: var(--teal); margin-left: -0.35rem; letter-spacing: 0.01em; }
     .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
     .nav-links a { text-decoration: none; color: var(--gray); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--color-accent-gold-dark); }
@@ -97,7 +98,8 @@
   <nav>
     <a href="index.html" class="nav-logo">
       <img src="ChAImp_Logo.png" alt="ChAImp logo" />
-      <span class="nav-wordmark">Ch<span>AI</span>mp</span>
+      <span class="nav-wordmark" aria-label="ChAImp, pronounced Champ" title="/tʃæmp/">Ch<span>AI</span>mp</span>
+      <span class="nav-pron" aria-hidden="true">("Champ")</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html#services">What We Do</a></li>
@@ -121,6 +123,8 @@
   <footer>
     <div class="footer-legal">
       <div class="footer-legal-left">
+        <span>ChAImp ("Champ") · more mission, less admin</span>
+        <span class="sep">·</span>
         <span>© 2026 ChAImp</span>
         <span class="sep">·</span>
         <span>ChAImp is a registered Washington State nonprofit corporation. 501(c)(3) tax-exempt status is currently pending</span>
