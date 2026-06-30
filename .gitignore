@@ -1,2 +1,10 @@
 # Brand exports staged for other repos — not part of this site
 _brand-export/
+
+# Editor config (personal)
+.zed/
+
+# Secrets — never commit
+.env
+.env.local
+.env.secrets.local
