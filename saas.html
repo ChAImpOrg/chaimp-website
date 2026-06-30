@@ -11,6 +11,22 @@
   <meta name="theme-color" content="#0D1B2A" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <!-- Organization structured data (schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ChAImp",
+    "alternateName": "Champ",
+    "url": "https://chaimp.org",
+    "logo": "https://chaimp.org/ChAImp_Logo.png",
+    "description": "ChAImp (pronounced \"Champ\") is a nonprofit-tech venture pairing consulting with purpose-built software so small nonprofits get enterprise-grade technology. The \"AI\" is our method — quietly cutting administrative overhead — not our marketing. More mission, less admin.",
+    "sameAs": [
+      "https://linkedin.com/company/chaimp",
+      "https://github.com/ChAImpOrg"
+    ]
+  }
+  </script>
   <style>
     :root {
       --navy: #0D1B2A;
@@ -40,6 +56,7 @@
     .nav-logo img { height: 40px; width: auto; }
     .nav-wordmark { font-family: 'Nunito', sans-serif; font-weight: 600; font-size: 1.3rem; color: var(--navy); letter-spacing: -0.02em; }
     .nav-wordmark span { color: var(--teal); }
+    .nav-pron { font-size: 0.78rem; font-weight: 600; color: var(--teal); margin-left: -0.35rem; letter-spacing: 0.01em; }
     .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
     .nav-links a { text-decoration: none; color: var(--gray); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--color-accent-gold-dark); }
@@ -186,7 +203,8 @@
   <nav>
     <a href="index.html" class="nav-logo">
       <img src="ChAImp_Logo.png" alt="ChAImp logo" />
-      <span class="nav-wordmark">Ch<span>AI</span>mp</span>
+      <span class="nav-wordmark" aria-label="ChAImp, pronounced Champ" title="/tʃæmp/">Ch<span>AI</span>mp</span>
+      <span class="nav-pron" aria-hidden="true">("Champ")</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html#services">What We Do</a></li>
@@ -202,7 +220,7 @@
   <div class="page-hero">
     <div class="hero-badge">Our Solutions</div>
     <h1>Software for needs the market <em>forgot</em> — or priced out.</h1>
-    <p class="lede">Most nonprofit software is either too expensive, too generic, or built for someone else entirely. <strong>ChAImp's solutions are different.</strong> Three products — <strong>CartonCrew</strong>, <strong>SchoolPTA</strong>, and <strong>RescueCentral</strong> — each co-built with a partner organization to solve a real problem the market underserves. Every one is designed around the same belief: AI should enhance the admin experience, not replace it — so your team has more time on mission.</p>
+    <p class="lede">Most nonprofit software is either too expensive, too generic, or built for someone else entirely. <strong>ChAImp's solutions are different.</strong> Three flagship products — <strong>CartonCrew</strong>, <strong>RescueCentral</strong>, and <strong>SchoolPTA</strong> — each co-built with a partner organization to solve a real problem the market underserves, plus <strong>CartonCrewStudio</strong>, a spin-off built for art galleries. Every one is designed around the same belief: AI should enhance the admin experience, not replace it — so your team has more time on mission.</p>
   </div>
 
   <!-- HOW IT WORKS -->
@@ -234,14 +252,14 @@
   <!-- OFFERINGS -->
   <section class="offerings-section">
     <span class="section-label">Current Offerings</span>
-    <h2 class="section-title">Three products.<br>One model.</h2>
+    <h2 class="section-title">Purpose-built products.<br>One model.</h2>
     <p class="section-body">Each ChAImp solution was shaped with a real partner nonprofit and built around the same belief: <strong style="color: var(--navy); font-weight: 600;">AI should enhance the admin experience, never replace it.</strong> The goal is always the same — give your team back the hours, so they can spend them on mission.</p>
     <div class="offerings-grid">
       <div class="offering-card fade-up">
         <img class="offering-logo" src="CartonCrew_Logo.png" alt="CartonCrew" />
-        <h3>The nonprofit CRM without the complexity.</h3>
-        <p class="offering-tagline">Donor, volunteer, and constituent relationships — finally readable</p>
-        <p>Built and battle-tested as ChAImp's own in-house CRM, CartonCrew runs the day-to-day of how we operate — so by the time it reaches you, every workflow has been proven where it matters most: our own desks. Most nonprofit CRMs were built for enterprises and bolted-on for charities; CartonCrew is the opposite — purpose-built for community-level nonprofits, with the workflows that actually matter (donor relationships, volunteer engagement, programs, and outreach) and none of the bloat you'll never touch. Underneath, AI works as relationship memory: surfacing what each donor cares about, what was promised, and what should come next — so the human conversations stay human.</p>
+        <h3>A nonprofit CRM small enough to actually use.</h3>
+        <p class="offering-tagline">Donors, volunteers, programs, and the people you serve — in one place a two-person team can run.</p>
+        <p>Most nonprofit CRMs are enterprise software with a charity discount bolted on. CartonCrew is the opposite: built from the ground up for community-level nonprofits, with the workflows that matter and none of the bloat you'll never touch. We run ChAImp on it ourselves. Underneath, AI works as relationship memory — surfacing what each supporter cares about, what was promised, and what comes next — so the human conversations stay human.</p>
         <div class="meta">
           <span class="meta-tag">CRM</span>
           <span class="meta-tag">Donor Management</span>
@@ -250,17 +268,17 @@
         <a href="https://cartoncrew.online" target="_blank" rel="noopener" class="offering-domain">Visit cartoncrew.online <span class="accent-gold">→</span></a>
       </div>
       <div class="offering-card fade-up">
-        <img class="offering-logo" src="SchoolPTA_Logo.png" alt="SchoolPTA" />
-        <h3>A modern, mobile-first home for your PTA/PTO.</h3>
-        <p class="offering-tagline">Built for the way parents actually use their phones</p>
-        <p>Co-built with a real school PTA, SchoolPTA was shaped by the people who actually run one — not designers guessing at it. PTAs and PTOs do enormous work on aging websites, email chains, and paper sign-ups; SchoolPTA brings all of that into a clean, mobile-first experience: events, sign-ups, volunteer slots, fundraising, and communication — all in one place, all on a phone. AI takes on the unglamorous work the board never had time for — drafting the weekly newsletter, generating the next sign-up sheet, nudging the parent who forgot to RSVP — so volunteer evenings stop being inbox evenings.</p>
+        <img class="offering-logo" src="CartonCrewStudio_Logo.png" alt="CartonCrewStudio" />
+        <h3>The nonprofit CRM that speaks gallery.</h3>
+        <p class="offering-tagline">Artists, artworks, exhibitions, and collectors — first-class, not crammed into a generic contact field.</p>
+        <p>CartonCrewStudio is CartonCrew tuned for nonprofit art galleries and community studios: the same lean CRM, but it knows your world. Instead of bending a one-size-fits-all "constituent" record around an artist, or filing a piece under "notes," it gives you the things you actually work with — artists, works, exhibitions, patrons, and programs. Underneath, the same AI relationship memory keeps track of which collector follows which artist, what a patron bought or pledged, and who's due for a show — so the conversations that keep a gallery alive stay personal. Built on the CRM we run ChAImp on, specialized for the galleries and studios doing big, meaningful work on lean budgets.</p>
         <div class="meta">
-          <span class="meta-tag">PTA / PTO</span>
-          <span class="meta-tag">Mobile-First</span>
-          <span class="meta-tag">Events &amp; Fundraising</span>
+          <span class="meta-tag">CRM</span>
+          <span class="meta-tag">Art Galleries</span>
+          <span class="meta-tag">Community Studios</span>
+          <span class="meta-tag">AI-Enhanced Admin</span>
         </div>
-        <p class="offering-tagline" style="color: var(--color-accent-gold-dark); font-style: normal; margin-top: 0.25rem;">📅 Case study coming Fall 2026 &mdash; our first PTA launches SchoolPTA for the new school year.</p>
-        <a href="https://schoolpta.org" target="_blank" rel="noopener" class="offering-domain">Visit schoolpta.org <span class="accent-gold">→</span></a>
+        <p class="offering-tagline" style="color: var(--color-accent-gold-dark); font-style: normal; margin-top: 0.25rem;">✨ New &mdash; a CartonCrew spin-off, currently in development.</p>
       </div>
       <div class="offering-card fade-up">
         <img class="offering-logo" src="RescueCentral_Logo.png" alt="RescueCentral" />
@@ -275,6 +293,19 @@
         </div>
         <p class="offering-tagline" style="color: var(--color-accent-gold-dark); font-style: normal; margin-top: 0.25rem;">📅 Case study coming Summer 2026 &mdash; Bull Terrier Rescue, Inc. goes live with RescueCentral this summer.</p>
         <a href="https://rescuecentral.app" target="_blank" rel="noopener" class="offering-domain">Visit rescuecentral.app <span class="accent-gold">→</span></a>
+      </div>
+      <div class="offering-card fade-up">
+        <img class="offering-logo" src="SchoolPTA_Logo.png" alt="SchoolPTA" />
+        <h3>A modern, mobile-first home for your PTA/PTO.</h3>
+        <p class="offering-tagline">Built for the way parents actually use their phones</p>
+        <p>Co-built with a real school PTA, SchoolPTA was shaped by the people who actually run one — not designers guessing at it. PTAs and PTOs do enormous work on aging websites, email chains, and paper sign-ups; SchoolPTA brings all of that into a clean, mobile-first experience: events, sign-ups, volunteer slots, fundraising, and communication — all in one place, all on a phone. AI takes on the unglamorous work the board never had time for — drafting the weekly newsletter, generating the next sign-up sheet, nudging the parent who forgot to RSVP — so volunteer evenings stop being inbox evenings.</p>
+        <div class="meta">
+          <span class="meta-tag">PTA / PTO</span>
+          <span class="meta-tag">Mobile-First</span>
+          <span class="meta-tag">Events &amp; Fundraising</span>
+        </div>
+        <p class="offering-tagline" style="color: var(--color-accent-gold-dark); font-style: normal; margin-top: 0.25rem;">📅 Case study coming Fall 2026 &mdash; our first PTA launches SchoolPTA for the new school year.</p>
+        <a href="https://schoolpta.org" target="_blank" rel="noopener" class="offering-domain">Visit schoolpta.org <span class="accent-gold">→</span></a>
       </div>
       <div class="offering-card offering-placeholder fade-up">
         <div class="offering-status status-invite">✨ Co-Build With Us</div>
@@ -398,7 +429,7 @@
     <div class="cta-inner">
       <span class="section-label">Become a Co-Build Partner</span>
       <h2 class="section-title">Got a problem the market won't solve?</h2>
-      <p class="section-body"><strong style="color: var(--navy); font-weight: 600;">CartonCrew, SchoolPTA, and RescueCentral are live today</strong> &mdash; explore them now at <a href="https://cartoncrew.online" target="_blank" rel="noopener" style="color: var(--teal); font-weight: 600;">cartoncrew.online</a>, <a href="https://schoolpta.org" target="_blank" rel="noopener" style="color: var(--teal); font-weight: 600;">schoolpta.org</a>, and <a href="https://rescuecentral.app" target="_blank" rel="noopener" style="color: var(--teal); font-weight: 600;">rescuecentral.app</a>.<br><br>If you're working around the same software gap day after day — patching it with spreadsheets, paying too much for too little, or doing without — let's talk. The next ChAImp solution might start with your team.</p>
+      <p class="section-body"><strong style="color: var(--navy); font-weight: 600;">CartonCrew, RescueCentral, and SchoolPTA are live today</strong> &mdash; explore them now at <a href="https://cartoncrew.online" target="_blank" rel="noopener" style="color: var(--teal); font-weight: 600;">cartoncrew.online</a>, <a href="https://rescuecentral.app" target="_blank" rel="noopener" style="color: var(--teal); font-weight: 600;">rescuecentral.app</a>, and <a href="https://schoolpta.org" target="_blank" rel="noopener" style="color: var(--teal); font-weight: 600;">schoolpta.org</a>.<br><br>If you're working around the same software gap day after day — patching it with spreadsheets, paying too much for too little, or doing without — let's talk. The next ChAImp solution might start with your team.</p>
       <div class="cta-actions">
         <a href="mailto:contact@chaimp.org?subject=ChAImp%20Solutions%20%E2%80%94%20Co-build%20conversation" class="btn-primary">Start the Conversation <span class="accent-gold">→</span></a>
         <a href="https://outlook.office.com/book/ChAImp1@chaimp.org/?ismsaljsauthenabled" target="_blank" rel="noopener" class="btn-secondary">📅 Book a Call or Coffee</a>
@@ -411,7 +442,7 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-brand-block">
-        <div class="footer-brand">Ch<span>AI</span>mp</div>
+        <div class="footer-brand" aria-label="Champ" title="/tʃæmp/">Ch<span>AI</span>mp</div>
         <div class="footer-tagline">More Mission<span class="accent-gold">.</span> Less Admin<span class="accent-gold">.</span></div>
         <p class="footer-mission">Championing community-level nonprofits through AI and mission progression. Enterprise-grade technology, nonprofit heart.</p>
       </div>
@@ -446,6 +477,8 @@
     </div>
     <div class="footer-legal">
       <div class="footer-legal-left">
+        <span>ChAImp ("Champ") · more mission, less admin</span>
+        <span class="sep">·</span>
         <span>© 2026 ChAImp</span>
         <span class="sep">·</span>
         <span><strong>501(c)(3) Pending</strong></span>
