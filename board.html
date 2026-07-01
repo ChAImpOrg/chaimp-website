@@ -58,6 +58,7 @@
     .board-profile-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,27,42,0.08); }
     .board-profile-avatar { width: 160px; height: 160px; border-radius: 50%; margin-bottom: 1.5rem; overflow: hidden; border: 3px solid var(--teal); box-shadow: 0 8px 24px rgba(79,179,169,0.2); flex-shrink: 0; }
     .board-profile-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .board-profile-avatar-initials { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--navy-mid); color: white; font-family: 'DM Serif Display', serif; font-size: 2.75rem; }
     .board-profile-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 0.25rem; }
     .board-profile-title { font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; }
     .board-profile-bio { display: flex; flex-direction: column; gap: 1rem; text-align: left; margin-bottom: 1.5rem; }
@@ -178,13 +179,13 @@
         linkedinLabel: 'Connect with Andrew on LinkedIn'
       },
       {
-        name: 'Cathy Oaks',
+        name: 'Cathy Oaks Hayes',
         title: 'Founding Treasurer',
         bio: [
           'Cathy is Board Treasurer with a background in running P&L (full bio coming soon).'
         ],
         photo: 'Cathy_Oaks.JPG',
-        photoAlt: 'Cathy Oaks, Founding Treasurer at ChAImp',
+        photoAlt: 'Cathy Oaks Hayes, Founding Treasurer at ChAImp',
         linkedin: 'https://www.linkedin.com/in/cathyoaks/',
         linkedinLabel: 'Connect with Cathy on LinkedIn'
       }
@@ -201,6 +202,13 @@
       img.alt = member.photoAlt;
       img.width = 160;
       img.height = 160;
+      img.onerror = () => {
+        img.remove();
+        const initials = document.createElement('div');
+        initials.className = 'board-profile-avatar-initials';
+        initials.textContent = member.name.split(' ').map(part => part[0]).join('');
+        avatar.appendChild(initials);
+      };
       avatar.appendChild(img);
 
       const name = document.createElement('h2');
