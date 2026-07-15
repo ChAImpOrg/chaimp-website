@@ -1,0 +1,28 @@
+# ============================================================================
+# GITLEAKS CANARY - Story AB#303. DELETED, NEVER MERGED.
+# ============================================================================
+#
+# Every value below is SYNTHETIC. Fabricated for this test, never real, never
+# valid against anything, never rotated-but-once-real.
+#
+# Why this file exists:
+#   A green gitleaks run on a repo with no secrets in it proves NOTHING. It is
+#   indistinguishable from a scan that is misconfigured, pointed at the wrong
+#   path, or not running at all. Worse, a gitleaks config containing RE2-illegal
+#   lookaround PANICS on startup and reports "failure" without reading a single
+#   file - a red check that would go red identically on a repo full of live
+#   credentials. That has already happened once in this org.
+#
+#   So this canary must make the scan go RED, and the run log must show
+#   "leaks found" WITHOUT "panic:". Red alone is not evidence.
+#
+# Probe 1: upstream default ruleset (proves useDefault = true is in effect)
+AWS_KEY_ID = "AKIA4X7QZ2MNPLKJH3RT"
+AWS_SECRET = "wJalrXUtnFEMI0K7MDENGbPxRfiCYzEXAMPLEKEY"
+
+# Probe 2: org custom rule "anthropic-key"
+ANTHROPIC_API_KEY = "sk-ant-FAKE0000notarealkey000000000000000000"
+
+# Probe 3: org custom rule "neon-connection-string" - a LITERAL password, which
+# must match, unlike a ${template} literal, which must not.
+DATABASE_URL = "postgresql://svcuser:Zx9QpLm4TrWv7Nb2@ep-fake-db-12345.us-east-2.aws.neon.tech:5432/main"
