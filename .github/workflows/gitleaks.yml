@@ -1,0 +1,43 @@
+name: gitleaks
+
+# Scans the diff of every PR and every push to main for secrets using the
+# upstream gitleaks binary (no third-party Action wrapper — gitleaks-action
+# requires a paid licence for org accounts). Failing this check blocks merge.
+#
+# Do not "simplify" this back to gitleaks-action. The binary is deliberate.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+# Marketplace actions still ship on Node 20, which GitHub deprecates
+# June 16, 2026. Force Node 24 now.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  scan:
+    name: scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install gitleaks
+        run: |
+          set -euo pipefail
+          VERSION=8.21.2
+          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${VERSION}/gitleaks_${VERSION}_linux_x64.tar.gz" \
+            | tar -xz -C /tmp gitleaks
+          sudo mv /tmp/gitleaks /usr/local/bin/gitleaks
+          gitleaks version
+
+      - name: Scan
+        run: gitleaks detect --no-banner --redact --verbose --exit-code 1

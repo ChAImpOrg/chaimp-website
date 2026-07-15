@@ -1,0 +1,87 @@
+# gitleaks configuration — ChAImp org standard.
+# Mirrors ChAImpOrg/chaimp-cartoncrew so every repo scans to the same baseline.
+#
+# NOTE: gitleaks uses Go's RE2, which has NO lookaround. A `(?!` or `(?=` does
+# not merely fail to match — it PANICS the scanner on startup, which exits
+# non-zero and looks exactly like a legitimate red check while having read
+# zero files. Never add lookaround to a rule here.
+
+[extend]
+# Default rules bundled with gitleaks: private keys, cloud provider keys,
+# GitHub/Slack/Stripe tokens, azure-ad-client-secret, and more.
+useDefault = true
+
+# Allow-list false-positive patterns. Add sparingly — every entry is a hole.
+[allowlist]
+description = "Documented placeholders, and the Cloudflare Web Analytics beacon token (public by design)."
+paths = [
+  '''\.env\.example$''',
+]
+# Match against the whole LINE, not just the captured secret — what makes a
+# cf-beacon token safe is its context, not its shape.
+regexTarget = "line"
+regexes = [
+  # Cloudflare Web Analytics beacon token.
+  #
+  # This is NOT a secret. It is a public site identifier that Cloudflare's own
+  # docs instruct you to embed in your HTML:
+  #
+  #   <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+  #           data-cf-beacon='{"token": "..."}'></script>
+  #
+  # Every visitor reads it in page source. It grants access to nothing; the
+  # worst an abuser can do is submit junk analytics for our own site. There is
+  # nothing to rotate.
+  #
+  # gitleaks' default `generic-api-key` rule matches the `"token": "..."` shape
+  # without knowing what the token is for, and fires on two historical commits
+  # here (index.html @ 94286b14, saas.html @ a9337b31 — both since removed from
+  # HEAD). Because `gitleaks detect` scans FULL HISTORY, those two would fail
+  # this repo's scan on every run, forever. A permanently-red check is not a
+  # control — it distinguishes nothing — and under AB#304 a required check that
+  # can never pass would block every merge in this repo.
+  #
+  # Scoped to the beacon line specifically. This does NOT disable
+  # generic-api-key anywhere else: every allowlist entry is a hole, and this
+  # one is exactly the size of the thing it excuses.
+  '''data-cf-beacon''',
+]
+
+# Org-specific rules — credential shapes ChAImp actually uses that aren't in
+# the upstream default set.
+
+[[rules]]
+id = "supabase-secret-key"
+description = "Supabase new-model secret key (sb_secret_*)"
+regex = '''sb_secret_[A-Za-z0-9_-]{16,}'''
+tags = ["secret", "supabase"]
+
+[[rules]]
+id = "supabase-legacy-service-role"
+description = "Supabase legacy service_role JWT (starts with eyJ, contains 'service_role')"
+regex = '''eyJ[A-Za-z0-9_-]+\.eyJ[A-Za-z0-9_-]*service_role[A-Za-z0-9_-]*\.[A-Za-z0-9_-]+'''
+tags = ["secret", "supabase", "legacy"]
+
+[[rules]]
+id = "anthropic-key"
+description = "Anthropic API key"
+regex = '''sk-ant-[A-Za-z0-9_\-]{20,}'''
+tags = ["secret", "anthropic"]
+
+[[rules]]
+id = "resend-key"
+description = "Resend API key"
+regex = '''re_[A-Za-z0-9_]{20,}'''
+tags = ["secret", "resend"]
+
+[[rules]]
+id = "neon-connection-string"
+description = "Neon/Postgres connection string with a LITERAL inline password"
+# Excluding $ { } from the user, password and host segments is what keeps this
+# off template literals like `postgres://u.${ref}:${dbPassword}@${host}:6543`,
+# which are code, not credentials. The first draft of this rule lacked those
+# exclusions and fired on chaimp-bootstrapper's supabase provider — a false
+# positive that would have been reported as a leak in a repo that was clean.
+# RE2 has no lookaround, so exclusion must be done with character classes.
+regex = '''postgres(ql)?://[^:\s'"$/]+:[^@\s'"${}]{8,}@[^\s'"/${}]+'''
+tags = ["secret", "neon", "postgres"]
