@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ChAImp Solutions — CartonCrew, SchoolPTA, and RescueCentral. Purpose-built software for nonprofits, PTAs, and animal rescues, co-developed with partner organizations." />
+  <meta name="description" content="ChAImp Solutions — CartonCrew, CartonCrewStudio, RescueCentral, SchoolPTA, and KnowledgeRetention, plus consultancy for nonprofits: solution reviews, process optimization, AI training, TechSoup benefits, and Microsoft 365 deployment." />
   <meta name="keywords" content="nonprofit solutions, nonprofit software, ChAImp solutions, nonprofit technology products" />
   <title>Our Solutions — ChAImp</title>
   <link rel="icon" type="image/png" href="ChAImp_Logo.png" />
@@ -82,7 +82,7 @@
     /* ── HOW IT WORKS ── */
     .how-section { background: var(--cream); max-width: 100%; padding: 5rem 3rem; }
     .how-inner { max-width: 1200px; margin: 0 auto; }
-    .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
     .how-card { background: white; border-radius: 16px; padding: 2rem; border: 1px solid var(--light-gray); position: relative; }
     .how-step { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--color-accent-gold); line-height: 1; margin-bottom: 0.75rem; }
     .how-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.5rem; }
@@ -110,12 +110,32 @@
     .offering-domain:hover { background: var(--navy-mid); transform: translateY(-1px); }
     .offering-domain .accent-gold { color: var(--color-accent-gold); }
 
+    /* ── TRUST (in the security section) ── */
+    .trust-heading { font-family: 'DM Serif Display', serif; font-size: clamp(1.5rem, 2.4vw, 2rem); color: var(--navy); line-height: 1.25; margin: 3.5rem 0 0.75rem; }
+    .trust-heading-first { margin-top: 2.5rem; }
+    .trust-intro { font-size: 1rem; color: var(--gray); line-height: 1.7; max-width: 760px; margin-bottom: 2rem; }
+    /* Two classes on purpose: .security-grid is defined later in this sheet and would
+       otherwise win on source order and force these back to two columns. */
+    .security-grid.trust-grid { grid-template-columns: repeat(3, 1fr); }
+    .security-grid.tech-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* ── CONSULTANCY ── */
+    .consult-section { background: var(--cream); max-width: 100%; padding: 5rem 3rem; border-top: 1px solid var(--light-gray); }
+    .consult-inner { max-width: 1200px; margin: 0 auto; }
+    .consult-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+    .consult-card { background: white; border-radius: 16px; padding: 2rem; border: 1px solid var(--light-gray); display: flex; flex-direction: column; gap: 0.6rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .consult-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,27,42,0.08); }
+    .consult-card .ico { width: 44px; height: 44px; border-radius: 11px; background: rgba(79,179,169,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 0.25rem; }
+    .consult-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); line-height: 1.25; }
+    .consult-card .consult-tagline { font-size: 0.88rem; color: var(--teal); font-weight: 600; font-style: italic; }
+    .consult-card p { font-size: 0.92rem; color: var(--gray); line-height: 1.65; }
+
     /* ── SECURITY ── */
     .security-section { background: var(--cream); max-width: 100%; padding: 5rem 3rem; border-top: 1px solid var(--light-gray); }
     .security-inner { max-width: 1200px; margin: 0 auto; }
     .security-pledge { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem, 2vw, 1.7rem); line-height: 1.4; color: var(--navy); max-width: 900px; margin: -1rem 0 2.5rem; padding-left: 1.25rem; border-left: 4px solid var(--color-accent-gold); font-style: italic; }
     .security-pledge strong { font-style: normal; color: var(--color-accent-gold-dark); font-weight: 400; }
-    .security-lead { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; }
+    .security-lead { display: flex; flex-direction: column; gap: 1.25rem; }
     .security-shield { background: white; border: 1px solid var(--light-gray); border-radius: 20px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start; position: relative; overflow: hidden; }
     .security-shield::before { content: ''; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(79,179,169,0.18) 0%, transparent 70%); pointer-events: none; }
     .security-shield-icon { width: 56px; height: 56px; border-radius: 14px; background: rgba(79,179,169,0.12); display: flex; align-items: center; justify-content: center; font-size: 1.7rem; }
@@ -123,7 +143,7 @@
     .security-shield p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; }
     .security-shield .badge-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .security-badge { background: var(--cream); border: 1px solid var(--light-gray); padding: 0.3rem 0.75rem; border-radius: 100px; font-size: 0.75rem; color: var(--navy); font-weight: 600; }
-    .security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .security-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     .security-card { background: white; border-radius: 16px; padding: 1.5rem; border: 1px solid var(--light-gray); display: flex; flex-direction: column; gap: 0.5rem; }
     .security-card .ico { width: 40px; height: 40px; border-radius: 10px; background: rgba(79,179,169,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 0.25rem; }
     .security-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
@@ -188,8 +208,8 @@
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       .page-hero { padding: 7rem 1.5rem 3rem; }
-      section, .how-section, .principles-section, .cta-section, .offerings-section { padding: 4rem 1.5rem; }
-      .how-grid, .offerings-grid, .principles-grid, .security-grid { grid-template-columns: 1fr; }
+      section, .how-section, .principles-section, .cta-section, .offerings-section, .consult-section { padding: 4rem 1.5rem; }
+      .how-grid, .offerings-grid, .principles-grid, .security-grid, .consult-grid, .security-grid.trust-grid, .security-grid.tech-grid { grid-template-columns: 1fr; }
       .security-lead { grid-template-columns: 1fr; gap: 1.5rem; }
       footer { padding: 3rem 1.5rem 2rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -219,8 +239,8 @@
   <!-- PAGE HERO -->
   <div class="page-hero">
     <div class="hero-badge">Our Solutions</div>
-    <h1>Software for needs the market <em>forgot</em> — or priced out.</h1>
-    <p class="lede">Most nonprofit software is either too expensive, too generic, or built for someone else entirely. <strong>ChAImp's solutions are different.</strong> Three flagship products — <strong>CartonCrew</strong>, <strong>RescueCentral</strong>, and <strong>SchoolPTA</strong> — each co-built with a partner organization to solve a real problem the market underserves, plus <strong>CartonCrewStudio</strong>, a spin-off built for art galleries. Every one is designed around the same belief: AI should enhance the admin experience, not replace it — so your team has more time on mission.</p>
+    <h1>For needs the market <em>forgot</em> — or priced out.</h1>
+    <p class="lede">Most nonprofit software is too generic, built for someone else, or priced as if you were a bank. Some of what you need, you can get free — vendors donate and discount to 501(c)(3)s, and we'll help you claim every bit you're entitled to. But <strong>a nonprofit discount doesn't fix software that was never built for you</strong>, and it won't set it up, train your team, or make it worth having. That's the rest of the work: <strong>five products</strong> co-built with organizations like yours, help making what you already own actually work, and a custom build when nothing fits. All of it on the same belief: AI should enhance the admin experience, not replace it — so your team has more time on mission.</p>
   </div>
 
   <!-- HOW IT WORKS -->
@@ -242,8 +262,13 @@
         </div>
         <div class="how-card fade-up">
           <div class="how-step">03</div>
+          <h3>You decide when it's right</h3>
+          <p>Nothing is "done" because we say so. Changes are tested before they reach you, then you use it on real work and tell us what's wrong — and we go again. The people who have to live with the software are the ones who decide when it's finished.</p>
+        </div>
+        <div class="how-card fade-up">
+          <div class="how-step">04</div>
           <h3>Open it to the sector</h3>
-          <p>Once proven, the product becomes available to other nonprofits facing the same gap — at pricing that respects mission-driven budgets, including free tiers where we can.</p>
+          <p>Once proven in real use, the product becomes available to other nonprofits facing the same gap — built on what your organization taught us, not on what we assumed.</p>
         </div>
       </div>
     </div>
@@ -259,7 +284,7 @@
         <img class="offering-logo" src="CartonCrew_Logo.png" alt="CartonCrew" />
         <h3>A nonprofit CRM small enough to actually use.</h3>
         <p class="offering-tagline">Donors, volunteers, programs, and the people you serve — in one place a two-person team can run.</p>
-        <p>Most nonprofit CRMs are enterprise software with a charity discount bolted on. CartonCrew is the opposite: built from the ground up for community-level nonprofits, with the workflows that matter and none of the bloat you'll never touch. We run ChAImp on it ourselves. Underneath, AI works as relationship memory — surfacing what each supporter cares about, what was promised, and what comes next — so the human conversations stay human.</p>
+        <p>Co-built with an organization focused on the foster care system. Most nonprofit CRMs are enterprise software with a nonprofit discount bolted on. CartonCrew is the opposite: built from the ground up for community-level nonprofits, with the workflows that matter and none of the bloat you'll never touch. We run ChAImp on it ourselves. Underneath, AI works as relationship memory — surfacing what each supporter cares about, what was promised, and what comes next — so the human conversations stay human.</p>
         <div class="meta">
           <span class="meta-tag">CRM</span>
           <span class="meta-tag">Donor Management</span>
@@ -271,7 +296,7 @@
         <img class="offering-logo" src="CartonCrewStudio_Logo.png" alt="CartonCrewStudio" />
         <h3>The nonprofit CRM that speaks gallery.</h3>
         <p class="offering-tagline">Artists, artworks, exhibitions, and collectors — first-class, not crammed into a generic contact field.</p>
-        <p>CartonCrewStudio is CartonCrew tuned for nonprofit art galleries and community studios: the same lean CRM, but it knows your world. Instead of bending a one-size-fits-all "constituent" record around an artist, or filing a piece under "notes," it gives you the things you actually work with — artists, works, exhibitions, patrons, and programs. Underneath, the same AI relationship memory keeps track of which collector follows which artist, what a patron bought or pledged, and who's due for a show — so the conversations that keep a gallery alive stay personal. Built on the CRM we run ChAImp on, specialized for the galleries and studios doing big, meaningful work on lean budgets.</p>
+        <p>Co-built with a community art gallery. CartonCrewStudio is CartonCrew tuned for nonprofit art galleries and community studios: the same lean CRM, but it knows your world. Instead of bending a one-size-fits-all "constituent" record around an artist, or filing a piece under "notes," it gives you the things you actually work with — artists, works, exhibitions, patrons, and programs. Underneath, the same AI relationship memory keeps track of which collector follows which artist, what a patron bought or pledged, and who's due for a show — so the conversations that keep a gallery alive stay personal. Built on the CRM we run ChAImp on, specialized for the galleries and studios doing big, meaningful work on lean budgets.</p>
         <div class="meta">
           <span class="meta-tag">CRM</span>
           <span class="meta-tag">Art Galleries</span>
@@ -285,14 +310,14 @@
         <img class="offering-logo" src="RescueCentral_Logo.png" alt="RescueCentral" />
         <h3>Everything an animal rescue runs on — in one place.</h3>
         <p class="offering-tagline">Web presence, volunteers, adoptions, surrenders, fundraising</p>
-        <p>Co-built with Bull Terrier Rescue, Inc., RescueCentral grew out of what an active rescue actually needs to run, day in and day out. Animal rescues juggle a public website, adoption applications, surrender intake, volunteer and foster coordination, and ongoing fundraising — usually across half a dozen disconnected tools. RescueCentral unifies the whole operation behind a modern web presence built for the public, and a streamlined back office built for the people doing the work. AI works as triage and decision support: pre-reading adoption applications, flagging concerns for a volunteer to look at, and queuing up the next action so nothing falls through the cracks.</p>
+        <p>Co-built with a dog rescue spanning the West Coast, RescueCentral grew out of what an active rescue actually needs to run, day in and day out. Animal rescues juggle a public website, adoption applications, surrender intake, volunteer and foster coordination, and ongoing fundraising — usually across half a dozen disconnected tools. RescueCentral unifies the whole operation behind a modern web presence built for the public, and a streamlined back office built for the people doing the work. AI works as triage and decision support: pre-reading adoption applications, flagging concerns for a volunteer to look at, and queuing up the next action so nothing falls through the cracks.</p>
         <div class="meta">
           <span class="meta-tag">Animal Rescue</span>
           <span class="meta-tag">Adoptions &amp; Surrenders</span>
           <span class="meta-tag">Volunteer Coordination</span>
           <span class="meta-tag">Fundraising</span>
         </div>
-        <p class="offering-tagline" style="color: var(--color-accent-gold-dark); font-style: normal; margin-top: 0.25rem;">📅 Case study coming Summer 2026 &mdash; Bull Terrier Rescue, Inc. goes live with RescueCentral this summer.</p>
+        <p class="offering-tagline" style="color: var(--color-accent-gold-dark); font-style: normal; margin-top: 0.25rem;">📅 Case study coming Summer 2026 &mdash; our founding rescue partner goes live with RescueCentral this summer.</p>
         <a href="https://rescuecentral.app" target="_blank" rel="noopener" class="offering-domain">Visit rescuecentral.app <span class="accent-gold">→</span></a>
       </div>
       <div class="offering-card fade-up">
@@ -308,6 +333,21 @@
         <p class="offering-tagline" style="color: var(--color-accent-gold-dark); font-style: normal; margin-top: 0.25rem;">📅 Case study coming Fall 2026 &mdash; our first PTA launches SchoolPTA for the new school year.</p>
         <a href="https://schoolpta.org" target="_blank" rel="noopener" class="offering-domain">Visit schoolpta.org <span class="accent-gold">→</span></a>
       </div>
+      <div class="offering-card fade-up" id="knowledgeretention">
+        <img class="offering-logo" src="KnowledgeRetention_Logo.png" alt="KnowledgeRetention" />
+        <h3>When someone leaves, their knowledge shouldn't leave with them.</h3>
+        <p class="offering-tagline">Digital estate planning for your nonprofit</p>
+        <p>Seven in ten nonprofits have no written succession plan. The founding ED, the volunteer who has run the gala for nine years, the board member who remembers why it's done that way — when they go, it all goes with them. KnowledgeRetention captures what lives in people's heads, inboxes, and scattered files, and turns it into answers your team can actually find. AI does the part nobody has time for: a guided interview by voice or chat that feels like a conversation instead of homework, then the messy work of turning it into role playbooks, a recurring-duties calendar, and a Q&amp;A layer that always shows its sources — so you know where an answer came from and whether to trust it.</p>
+        <div class="meta">
+          <span class="meta-tag">Succession Planning</span>
+          <span class="meta-tag">Institutional Knowledge</span>
+          <span class="meta-tag">AI-Guided Interviews</span>
+          <span class="meta-tag">Continuity</span>
+        </div>
+        <p>About that voice interview: the recording is transcribed and then deleted within 24 hours &mdash; the shortest retention our transcription provider allows &mdash; and model training is explicitly switched off. Your people's voices are not a training set.</p>
+        <p class="offering-tagline" style="color: var(--color-accent-gold-dark); font-style: normal; margin-top: 0.25rem;">🔒 In closed beta &mdash; the free tier is available now.</p>
+        <a href="https://knowledgeretention.help" target="_blank" rel="noopener" class="offering-domain">Visit knowledgeretention.help <span class="accent-gold">→</span></a>
+      </div>
       <div class="offering-card offering-placeholder fade-up">
         <div class="offering-status status-invite">✨ Co-Build With Us</div>
         <h3>Your unmet need here</h3>
@@ -321,6 +361,53 @@
     </div>
   </section>
 
+  <!-- CONSULTANCY -->
+  <div class="consult-section" id="consultancy">
+    <div class="consult-inner">
+      <span class="section-label">Consultancy</span>
+      <h2 class="section-title">Sometimes the answer<br>isn't new software.</h2>
+      <p class="section-body">Not every problem needs a product built for it. Often the tools are already there — bought twice, half configured, or never rolled out. We'll look at what you have, tell you honestly what's worth keeping, and help your team actually use it. <strong style="color: var(--navy); font-weight: 600;">If you don't need to build anything, we'll say so.</strong></p>
+      <div class="consult-grid">
+        <div class="consult-card fade-up">
+          <div class="ico">🔍</div>
+          <h3>Solution Review</h3>
+          <p class="consult-tagline">An honest look at what you already run</p>
+          <p>We review the systems, licences, and workflows you have today — what's working, what's duplicated, and what you're paying for but never turned on. You get a plain-language picture of where you stand and what to do about it, whether or not we're the ones who do it.</p>
+        </div>
+        <div class="consult-card fade-up">
+          <div class="ico">⚙️</div>
+          <h3>Process Optimization</h3>
+          <p class="consult-tagline">Fix the workflow before you automate it</p>
+          <p>Automating a broken process just makes it break faster. We map how the work actually happens — not how the manual says it does — then cut the steps that exist only because someone once needed them. Usually the win is removing work, not adding tools.</p>
+        </div>
+        <div class="consult-card fade-up">
+          <div class="ico">🎓</div>
+          <h3>AI Training</h3>
+          <p class="consult-tagline">Confident with AI — and clear on its limits</p>
+          <p>Practical, jargon-free training for the people doing the work: where AI genuinely helps, where it doesn't, and what should never go into a prompt. Especially the donor and client data questions — because the fastest way to lose trust is to be careless with someone else's information.</p>
+        </div>
+        <div class="consult-card fade-up">
+          <div class="ico">🎁</div>
+          <h3>Donated Software Programs</h3>
+          <p class="consult-tagline">Claim what you already qualify for</p>
+          <p>Nonprofits routinely pay retail for software they could get donated or heavily discounted. Your 501(c)(3) status unlocks programs from TechSoup, Microsoft, Google and others — but eligibility, validation, and setup is its own job. We help you work out what you qualify for, get registered, and actually claim it, so the budget goes to mission instead of licences.</p>
+        </div>
+        <div class="consult-card fade-up">
+          <div class="ico">📧</div>
+          <h3>Microsoft 365 Deployment</h3>
+          <p class="consult-tagline">Set up properly, once</p>
+          <p>Email, files, and collaboration on a foundation that won't need redoing in a year: tenant setup, migration off whatever you're on now, and a sensible security baseline from day one. Built by people who spent their careers inside this stack.</p>
+        </div>
+        <div class="consult-card fade-up" style="background: rgba(79,179,169,0.04); border: 1.5px dashed var(--teal);">
+          <div class="ico">💬</div>
+          <h3>Not sure what you need?</h3>
+          <p class="consult-tagline">Start with the problem, not the solution</p>
+          <p>Most conversations start with "something isn't working and we're not sure why." That's a fine place to begin. Tell us what's painful and we'll help you figure out whether it's a process, a tool, a training gap — or something worth building.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- SECURITY -->
   <div class="security-section">
     <div class="security-inner">
@@ -328,10 +415,48 @@
       <h2 class="section-title">Security isn't a feature.<br>It's the foundation.</h2>
       <p class="section-body">Every ChAImp solution is built — and kept — to the security standards mission-driven organizations deserve. Donors trust you with their data. Your constituents trust you with theirs. We treat that trust as the design constraint, not an afterthought.</p>
       <p class="security-pledge"><strong>Our pledge:</strong> security is the first decision we make on every product — and the standard every release is measured against. Not a checkbox. Not a launch-week scramble. The foundation, full stop.</p>
+
+      <h3 class="trust-heading trust-heading-first">In plain language — and in writing.</h3>
+      <p class="trust-intro">Everything below is a term of the Master Service Agreement you'd sign, not a marketing promise. If the website and the contract ever disagree, the contract is the one that counts — so we've put the contract on the website.</p>
+      <div class="security-grid trust-grid">
+        <div class="security-card fade-up">
+          <div class="ico">🚫</div>
+          <h4>We never train AI on your data</h4>
+          <p>Your data is never sold, never rented, and never used to train any AI model — <strong style="color: var(--navy); font-weight: 600;">not even anonymized or aggregated</strong>. Most vendors leave themselves that loophole. We closed it in Schedule B of the agreement, where it's binding.</p>
+        </div>
+        <div class="security-card fade-up">
+          <div class="ico">👁️</div>
+          <h4>You can watch us work</h4>
+          <p>When we access your system to configure or support it, every administrative action is logged — and the log is visible to you, not just to us. Settings and configuration changes are recorded in an immutable activity log: who, what, when. You never have to take our word for what we did in there.</p>
+        </div>
+        <div class="security-card fade-up">
+          <div class="ico">📦</div>
+          <h4>Your data is yours, and you can leave with it</h4>
+          <p>Your data remains your property — that's in the agreement, not just our intentions. You can export it in a commonly usable format, including on the way out, and either of us can end the arrangement with 60 days' notice. Leaving is a door, not a negotiation.</p>
+        </div>
+        <div class="security-card fade-up">
+          <div class="ico">💾</div>
+          <h4>Keep your own copy — we mean it</h4>
+          <p>Our platforms run automated backups. Even so, no vendor should be the only copy of anything that matters to you — including us. The export exists for exactly this: take a copy on your own schedule and keep it somewhere we don't control. It's the same advice we'd give you about any system you didn't build, and we'd rather say it than have you find out the hard way.</p>
+        </div>
+        <div class="security-card fade-up">
+          <div class="ico">🚨</div>
+          <h4>If we're breached, you hear it from us</h4>
+          <p>If we confirm a security incident involving your data, we notify you without undue delay and move to contain it — obligation in the agreement, not a courtesy we might extend. You'll hear what happened and what we did about it.</p>
+        </div>
+        <div class="security-card fade-up">
+          <div class="ico">🧠</div>
+          <h4>AI drafts. Your team decides.</h4>
+          <p>AI never acts on its own here. It reads, drafts, flags, and suggests — the decision stays with your team. And when it answers a question, it shows you where the answer came from, so the original is always one click away. AI does get things wrong sometimes. Showing its working is how we make that easy to spot.</p>
+        </div>
+      </div>
+
+      <h3 class="trust-heading">How it's built — for those who want the detail.</h3>
+      <p class="trust-intro">The promises above rest on this. You don't need to read it; your IT volunteer, your board's tech-savvy member, or the funder doing due diligence might.</p>
       <div class="security-lead">
         <div class="security-shield fade-up">
           <div class="security-shield-icon">🛡️</div>
-          <h3>Human review on every change &mdash; with Claude Code as an extra gate.</h3>
+          <h3>Nothing reaches you without a person signing off on it.</h3>
           <p>Code at ChAImp is Claude Code&ndash;assisted, but it never reaches production without a human reviewer signing off. A person reads every change, understands what it does, and decides whether it ships. On top of that, every pull request is scanned by two independent automated gates &mdash; <a href="https://github.com/anthropics/claude-code-security-review" target="_blank" rel="noopener" style="color: var(--teal); text-decoration: none; font-weight: 600;">Anthropic's Claude Code security review</a> and <a href="https://www.aikido.dev/" target="_blank" rel="noopener" style="color: var(--teal); text-decoration: none; font-weight: 600;">Aikido</a> &mdash; flagging injection flaws, auth bypasses, unsafe deserialization, secret exposure, vulnerable dependencies, and broken access control. Findings are remediated by a human before merge &mdash; never quietly waived, never auto-passed.</p>
           <div class="badge-row">
             <span class="security-badge">Human sign-off required</span>
@@ -340,7 +465,7 @@
             <span class="security-badge">Pre-merge, every PR</span>
           </div>
         </div>
-        <div class="security-grid">
+        <div class="security-grid tech-grid">
           <div class="security-card fade-up">
             <div class="ico">🔐</div>
             <h4>Sign in with Google or Microsoft &mdash; 2FA by default</h4>
@@ -348,45 +473,38 @@
           </div>
           <div class="security-card fade-up">
             <div class="ico">🔎</div>
-            <h4>Gitleaks credential scanning</h4>
-            <p>All code is checked in to GitHub with <a href="https://github.com/gitleaks/gitleaks" target="_blank" rel="noopener">Gitleaks</a> running on every push and pull request. API keys, tokens, and credentials are caught before code can land — and rotated immediately if anything is ever flagged.</p>
-          </div>
-          <div class="security-card fade-up">
-            <div class="ico">📡</div>
-            <h4>Continuous threat monitoring</h4>
-            <p>We watch for new vulnerabilities, dependency CVEs, and emerging threats against the libraries and platforms our products depend on. When something matters, we patch — and tell you what we did.</p>
+            <h4>Keys stay out of the code, and patches don't wait</h4>
+            <p>Every push and pull request is scanned by <a href="https://github.com/gitleaks/gitleaks" target="_blank" rel="noopener">Gitleaks</a> — API keys, tokens, and credentials are caught before they can land, and rotated immediately if anything is ever flagged. Application secrets and signing keys live in Microsoft Azure Key Vault: never in code, never in a shared spreadsheet, never in email; least-privilege, rotated on a schedule, revoked when no longer needed. We track vulnerabilities and dependency CVEs against everything we build on, and patch when it matters — then tell you what we did.</p>
           </div>
           <div class="security-card fade-up">
             <div class="ico">🗄️</div>
-            <h4>Row-Level Security across every database</h4>
-            <p>Tenant and user isolation is enforced at the database layer with Row-Level Security policies — not just in application code. Even a logic bug in the app can't expose one organization's data to another, because the database itself refuses the query.</p>
-          </div>
-          <div class="security-card fade-up">
-            <div class="ico">🔑</div>
-            <h4>Managed secrets in Azure Key Vault</h4>
-            <p>Application secrets, service credentials, and signing keys live in Microsoft Azure Key Vault — never in code, never in shared spreadsheets, never in email. Access is least-privilege, rotated on a schedule, and revoked the moment it's no longer needed.</p>
+            <h4>Another nonprofit can never see your data</h4>
+            <p>You share a platform with other organizations; you never share their view of it. Isolation is enforced by the database itself — Row-Level Security policies, not application code. Even a bug in the app can't hand one organization's data to another, because the database refuses the query outright. The most common way this goes wrong elsewhere is a developer forgetting a filter. Here, forgetting isn't possible.</p>
           </div>
           <div class="security-card fade-up">
             <div class="ico">🧾</div>
-            <h4>Auditable by design</h4>
-            <p>Authentication events, admin actions, and data exports are logged with timestamps and actor IDs. If a board, auditor, or grantor ever asks <em>who did what, when?</em> — we can answer.</p>
+            <h4>When your board or a funder asks, you can answer</h4>
+            <p>Sign-ins, admin actions, and data exports are all logged with timestamps and the identity of whoever did it. If a board member, an auditor, or a grantor ever asks <em>who did what, when?</em> — the answer exists, and you don't have to ask us for it.</p>
           </div>
         </div>
       </div>
       <div class="security-shield fade-up" style="margin-top: 1.5rem;">
         <div class="security-shield-icon">🏗️</div>
-        <h3>Built on infrastructure we don't have to apologize for.</h3>
-        <p>Our solutions run on platforms trusted across the industry, not a homegrown stack. Databases run on <strong style="color: var(--navy); font-weight: 600;">Supabase</strong> (managed PostgreSQL) with automated platform-managed backups. Applications are hosted on <strong style="color: var(--navy); font-weight: 600;">Vercel</strong> with HTTPS, managed certificates, and a global edge network by default. Application secrets are held in <strong style="color: var(--navy); font-weight: 600;">Microsoft Azure</strong> Key Vault. Code is version-controlled on <strong style="color: var(--navy); font-weight: 600;">GitHub</strong>, sign-in goes through <strong style="color: var(--navy); font-weight: 600;">Google</strong> and <strong style="color: var(--navy); font-weight: 600;">Microsoft OAuth</strong>, and AI features are powered by <strong style="color: var(--navy); font-weight: 600;">Anthropic</strong> &mdash; with your data never used to train commercial models. Established infrastructure means your nonprofit's data sits behind the same operational security that protects thousands of production applications &mdash; maintained by dedicated platform teams, not by us alone.</p>
+        <h3>Your data doesn't rest on us alone.</h3>
+        <p>Our solutions run on platforms trusted across the industry, not a homegrown stack. Databases run on managed PostgreSQL &mdash; <strong style="color: var(--navy); font-weight: 600;">Supabase</strong> or <strong style="color: var(--navy); font-weight: 600;">Neon</strong>, depending on the product &mdash; with automated platform-managed backups. Applications are hosted on <strong style="color: var(--navy); font-weight: 600;">Vercel</strong> with HTTPS, managed certificates, and a global edge network by default. Application secrets are held in <strong style="color: var(--navy); font-weight: 600;">Microsoft Azure</strong> Key Vault. Code is version-controlled on <strong style="color: var(--navy); font-weight: 600;">GitHub</strong>, and sign-in goes through <strong style="color: var(--navy); font-weight: 600;">Google</strong> and <strong style="color: var(--navy); font-weight: 600;">Microsoft OAuth</strong>. AI features are powered by <strong style="color: var(--navy); font-weight: 600;">Anthropic</strong>. Where a product listens rather than reads &mdash; KnowledgeRetention's voice interviews &mdash; speech is transcribed by <strong style="color: var(--navy); font-weight: 600;">AssemblyAI</strong> with model training explicitly disabled and audio retained for 24 hours, the shortest window they offer, then deleted. Your data is never used to train any AI model, anonymized or otherwise. Established infrastructure means your nonprofit's data sits behind the same operational security that protects thousands of production applications &mdash; maintained by dedicated platform teams, not by us alone.</p>
         <div class="badge-row">
           <span class="security-badge">Supabase</span>
+          <span class="security-badge">Neon</span>
           <span class="security-badge">Vercel</span>
           <span class="security-badge">Microsoft Azure</span>
           <span class="security-badge">GitHub</span>
           <span class="security-badge">Google OAuth</span>
           <span class="security-badge">Microsoft OAuth</span>
           <span class="security-badge">Anthropic</span>
+          <span class="security-badge">AssemblyAI</span>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -398,8 +516,8 @@
       <p class="section-body">Commercial nonprofit software too often treats the sector as a market to mine. ChAImp's solutions operate by a different set of rules.</p>
       <div class="principles-grid">
         <div class="principle fade-up">
-          <h3><span class="dot"></span>Nonprofit-appropriate pricing</h3>
-          <p>Pricing scales with what an organization can realistically pay — including free tiers where the mission justifies it. No enterprise pricing dressed up with a discount badge.</p>
+          <h3><span class="dot"></span>Pro bono, and the catch — stated up front</h3>
+          <p>We build pro bono for co-build partners. The consideration isn't money, it's the story: a case study within 75 days of go-live, plus a 15-day grace period. Miss it and the arrangement converts to our published annual plan for 12 months — but never by ambush. You get a reminder before the deadline and written confirmation of the terms before a single fee is payable. That's the whole deal, on the website, before you talk to us.</p>
         </div>
         <div class="principle fade-up">
           <h3><span class="dot"></span>Co-developed, not assumed</h3>
@@ -407,7 +525,7 @@
         </div>
         <div class="principle fade-up">
           <h3><span class="dot"></span>Your data, your call</h3>
-          <p>You own your data. You can export it. We don't train commercial models on it. Governance is a default, not an upsell.</p>
+          <p>You own your data. You can export it. We never train any AI model on it — not even anonymized. Governance is a default, not an upsell.</p>
         </div>
         <div class="principle fade-up">
           <h3><span class="dot"></span>No lock-in by design</h3>
@@ -426,7 +544,7 @@
   </div>
 
   <!-- CTA -->
-  <div class="cta-section">
+  <div class="cta-section" id="co-build">
     <div class="cta-inner">
       <span class="section-label">Become a Co-Build Partner</span>
       <h2 class="section-title">Got a problem the market won't solve?</h2>

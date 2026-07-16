@@ -63,7 +63,8 @@
     .board-profile-title { font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; }
     .board-profile-bio { display: flex; flex-direction: column; gap: 1rem; text-align: left; margin-bottom: 1.5rem; }
     .board-profile-bio p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; }
-    .board-profile-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: auto; padding: 0.45rem 1.1rem; font-size: 0.85rem; font-weight: 600; color: var(--teal); text-decoration: none; border: 1px solid var(--teal); border-radius: 999px; transition: background 0.2s, color 0.2s; }
+    .board-profile-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: auto; }
+    .board-profile-link { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 1.1rem; font-size: 0.85rem; font-weight: 600; color: var(--teal); text-decoration: none; border: 1px solid var(--teal); border-radius: 999px; transition: background 0.2s, color 0.2s; }
     .board-profile-link:hover { background: var(--teal); color: white; }
     .board-profile-link:focus-visible { outline: 2px solid var(--color-accent-gold-dark); outline-offset: 3px; }
 
@@ -151,7 +152,8 @@
         photo: 'Andrew_Chesser.png',
         photoAlt: 'Andrew Chesser, Founding President at ChAImp',
         linkedin: 'https://www.linkedin.com/in/andrew-chesser-23a41764/',
-        linkedinLabel: 'Connect with Andrew on LinkedIn'
+        linkedinLabel: 'Connect with Andrew on LinkedIn',
+        email: 'andrew@chaimp.org'
       },
       {
         name: 'Ashu Samra',
@@ -163,7 +165,8 @@
         photo: 'Ashu_Samra.jpg',
         photoAlt: 'Ashu Samra, Founding Technical Lead at ChAImp',
         linkedin: 'https://www.linkedin.com/in/ashumeet/',
-        linkedinLabel: 'Connect with Ashu on LinkedIn'
+        linkedinLabel: 'Connect with Ashu on LinkedIn',
+        email: 'ashu@chaimp.org'
       },
       {
         name: 'Cathy Oaks Hayes',
@@ -175,7 +178,21 @@
         photo: 'Cathy_Oaks.JPG',
         photoAlt: 'Cathy Oaks Hayes, Founding Treasurer at ChAImp',
         linkedin: 'https://www.linkedin.com/in/cathyoaks/',
-        linkedinLabel: 'Connect with Cathy on LinkedIn'
+        linkedinLabel: 'Connect with Cathy on LinkedIn',
+        email: 'cathy@chaimp.org'
+      },
+      {
+        name: 'Erik Øerum Hansen',
+        title: 'Founding Secretary &\nDirector, Customer Technical Implementation',
+        bio: [
+          'Erik is a technology leader with 24 years at Microsoft, where he served as a Principal Engineering Manager leading globally dispersed teams and owning multiple worldwide services. Originally from Denmark and now based in Washington, he brings deep expertise across CRM, ERP, AI transformation, and large-scale engineering excellence, with a long record of building strong teams and delivering production-grade systems. After leaving Microsoft in July 2026, he continues to stay active in community work, including local dog rescue efforts.',
+          'As ChAImp\'s Secretary, Erik maintains official records, ensures proper notice and documentation for board proceedings, and certifies resolutions and filings. As Director of Customer Technical Implementation, he advises on delivery strategy for partner nonprofits, evaluates feasibility and timelines, and serves as a technical point of escalation — helping ensure ChAImp\'s solutions are well built and successfully deployed where they matter most.'
+        ],
+        photo: 'Erik_Oerum_Hansen.png',
+        photoAlt: 'Erik Øerum Hansen, Founding Secretary & Director, Customer Technical Implementation at ChAImp',
+        linkedin: 'https://www.linkedin.com/in/erik-%C3%B8rum-hansen-786a705/',
+        linkedinLabel: 'Connect with Erik on LinkedIn',
+        email: 'erik@chaimp.org'
       },
       {
         name: 'Sarah Ciambrone',
@@ -188,7 +205,8 @@
         photo: 'Sarah_Ciambrone.jpg',
         photoAlt: 'Sarah Ciambrone, Founding Director of Mission & Outreach at ChAImp',
         linkedin: 'https://www.linkedin.com/in/sarahciambrone/',
-        linkedinLabel: 'Connect with Sarah on LinkedIn'
+        linkedinLabel: 'Connect with Sarah on LinkedIn',
+        email: 'sarah@chaimp.org'
       }
     ];
 
@@ -218,7 +236,11 @@
 
       const title = document.createElement('p');
       title.className = 'board-profile-title';
-      title.textContent = member.title;
+      // A title may carry explicit line breaks as \n — see Erik's dual role.
+      member.title.split('\n').forEach((line, i) => {
+        if (i) title.appendChild(document.createElement('br'));
+        title.appendChild(document.createTextNode(line));
+      });
 
       const bio = document.createElement('div');
       bio.className = 'board-profile-bio';
@@ -236,7 +258,17 @@
       link.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align: -3px;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>';
       link.appendChild(document.createTextNode(member.linkedinLabel));
 
-      card.append(avatar, name, title, bio, link);
+      const email = document.createElement('a');
+      email.className = 'board-profile-link';
+      email.href = 'mailto:' + member.email;
+      email.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align: -3px;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>';
+      email.appendChild(document.createTextNode(member.email));
+
+      const links = document.createElement('div');
+      links.className = 'board-profile-links';
+      links.append(link, email);
+
+      card.append(avatar, name, title, bio, links);
       return card;
     }
 
