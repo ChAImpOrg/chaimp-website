@@ -44,3 +44,4 @@ If you lead or support a nonprofit and want to explore what AI and modern techno
 ---
 
 *ChAImp is committed to responsible, transparent, and human-centered technology adoption for the social sector.*
+<!-- AB#318 anti-deadlock probe - closed unmerged, never lands -->
