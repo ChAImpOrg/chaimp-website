@@ -1,2 +1,10 @@
 # Brand exports staged for other repos — not part of this site
 _brand-export/
+
+# Secrets — never commit. This repo is public.
+.env.secrets.local
+.env.local
+.env
+
+# Editor
+.zed/
