@@ -9,6 +9,18 @@ This project follows [Semantic Versioning](https://semver.org/).
 > after the fact would be a tidy fiction. 1.0.0 is marked as the pre-changelog
 > baseline and the record starts honestly from 1.0.1.
 
+## [1.2.2] — 2026-07-17
+
+### Changed
+- **AI is now presented as vendor-agnostic.** On `saas.html`, the infrastructure section's
+  "AI features are powered by **Anthropic**" becomes "powered by **the provider you choose**", and the
+  `Anthropic` trust badge becomes **`AI provider of your choice`**. Reflects the move to let each
+  nonprofit pick its own AI provider.
+- Dev-tooling references are intentionally unchanged — ChAImp still builds with Claude Code, so the
+  "Claude Code security review" gate/badge and the "built with" tags describe how we build, not which
+  provider runs a customer's AI features. (Note: MSA §10's third-party-vendor list still names a single
+  AI vendor — update it out-of-repo to match this positioning.)
+
 ## [1.2.1] — 2026-07-17
 
 ### Changed
