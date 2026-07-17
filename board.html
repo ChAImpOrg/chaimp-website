@@ -54,15 +54,19 @@
 
     /* ── BOARD PROFILES ── */
     .board-profiles-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; align-items: stretch; }
-    .board-profile-card { flex: 1 1 380px; max-width: 480px; background: white; border-radius: 24px; padding: 3rem 2.5rem; border: 1px solid var(--light-gray); display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+    .board-profile-card { flex: 1 1 320px; max-width: 360px; scroll-margin-top: 110px; background: white; border-radius: 24px; padding: 3rem 2.5rem; border: 1px solid var(--light-gray); display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
     .board-profile-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,27,42,0.08); }
     .board-profile-avatar { width: 160px; height: 160px; border-radius: 50%; margin-bottom: 1.5rem; overflow: hidden; border: 3px solid var(--teal); box-shadow: 0 8px 24px rgba(79,179,169,0.2); flex-shrink: 0; }
     .board-profile-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
     .board-profile-avatar-initials { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--navy-mid); color: white; font-family: 'DM Serif Display', serif; font-size: 2.75rem; }
     .board-profile-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 0.25rem; }
-    .board-profile-title { font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .board-profile-title { font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.7rem; }
+    .board-profile-pill { display: inline-block; padding: 0.25rem 0.75rem; margin-bottom: 1.5rem; border-radius: 100px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: rgba(79,179,169,0.12); color: var(--teal); border: 1px solid rgba(79,179,169,0.28); }
     .board-profile-bio { display: flex; flex-direction: column; gap: 1rem; text-align: left; margin-bottom: 1.5rem; }
     .board-profile-bio p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; }
+    .board-profile-role { text-align: left; background: rgba(79,179,169,0.08); border-left: 3px solid var(--teal); border-radius: 0 12px 12px 0; padding: 1.1rem 1.25rem; margin-bottom: 1.5rem; width: 100%; }
+    .board-profile-role-label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
+    .board-profile-role p { font-size: 0.92rem; color: var(--navy); line-height: 1.65; }
     .board-profile-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: auto; }
     .board-profile-link { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 1.1rem; font-size: 0.85rem; font-weight: 600; color: var(--teal); text-decoration: none; border: 1px solid var(--teal); border-radius: 999px; transition: background 0.2s, color 0.2s; }
     .board-profile-link:hover { background: var(--teal); color: white; }
@@ -96,21 +100,9 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <a href="index.html" class="nav-logo">
-      <img src="ChAImp_Logo.png" alt="ChAImp logo" />
-      <span class="nav-wordmark" aria-label="ChAImp, pronounced Champ" title="/tʃæmp/">Ch<span>AI</span>mp</span>
-      <span class="nav-pron" aria-hidden="true">("Champ")</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html#services">What We Do</a></li>
-      <li><a href="saas.html">Our Solutions</a></li>
-      <li><a href="index.html#serve">Who We Serve</a></li>
-      <li><a href="index.html#casestudies">Case Studies</a></li>
-      <li><a href="index.html#founder">About</a></li>
-      <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
-    </ul>
-  </nav>
+  <!-- Navigation is injected by nav.js (single source of truth for all pages) -->
+  <nav id="site-nav" aria-label="Primary"></nav>
+  <script src="nav.js"></script>
 
   <!-- BOARD -->
   <section id="board">
@@ -144,11 +136,12 @@
     const boardMembers = [
       {
         name: 'Andrew Chesser',
-        title: "Founding President",
+        title: 'President',
+        founding: true,
         bio: [
-          'Andrew is an attorney with over a decade of experience in health law and regulation. He serves as an Associate at Helsell Fetterman LLP, where he practices in litigation, medical malpractice, and privacy and data security. Before joining Helsell, he advised Administrative Law Judges on Medicare coverage appeals at the Department of Health and Human Services.',
-          'As ChAImp\'s Founding President, Andrew brings that experience to bear on aligning the organization\'s work with its mission and values, helping ensure our nonprofit partners are well served.'
+          'Andrew is an attorney with over a decade of experience in health law and regulation. He serves as an Associate at Helsell Fetterman LLP, where he practices in litigation, medical malpractice, and privacy and data security. Before joining Helsell, he advised Administrative Law Judges on Medicare coverage appeals at the Department of Health and Human Services.'
         ],
+        role: 'As ChAImp\'s President, Andrew brings that experience to bear on aligning the organization\'s work with its mission and values, helping ensure our nonprofit partners are well served.',
         photo: 'Andrew_Chesser.png',
         photoAlt: 'Andrew Chesser, Founding President at ChAImp',
         linkedin: 'https://www.linkedin.com/in/andrew-chesser-23a41764/',
@@ -156,25 +149,13 @@
         email: 'andrew@chaimp.org'
       },
       {
-        name: 'Ashu Samra',
-        title: 'Founding Technical Lead',
-        bio: [
-          'Ashu is a Senior Software Development Engineer at Amazon with nearly 20 years of experience building scalable, production-grade software. He brings deep expertise across cloud architecture, distributed systems, automation, and AI tooling — along with the product instinct to take early-stage ideas all the way to robust, shippable products.',
-          'As ChAImp\'s Founding Technical Lead, Ashu helps shape the organization\'s technical strategy and system design, ensuring that what we build for nonprofits is engineered to last.'
-        ],
-        photo: 'Ashu_Samra.jpg',
-        photoAlt: 'Ashu Samra, Founding Technical Lead at ChAImp',
-        linkedin: 'https://www.linkedin.com/in/ashumeet/',
-        linkedinLabel: 'Connect with Ashu on LinkedIn',
-        email: 'ashu@chaimp.org'
-      },
-      {
         name: 'Cathy Oaks Hayes',
-        title: 'Founding Treasurer',
+        title: 'Treasurer',
+        founding: true,
         bio: [
-          'Cathy is a technology and operations executive with more than two decades of experience leading global teams and owning bottom-line results. She currently serves as a Partner and General Manager at Microsoft, where she leads quality and security strategy for Azure. Earlier in her career she held full profit-and-loss responsibility for K2\'s worldwide professional services organization, spanning offices in London, Singapore, South Africa, and Bellevue, and has held delivery and program leadership roles at companies including Nuance Communications and Cingular Wireless. Beyond her professional work, Cathy is active with several community-led nonprofits, including Special Olympics Washington and The Salvation Army Eastside Corps.',
-          'As ChAImp\'s Founding Treasurer, Cathy brings that record of financial and operational stewardship — along with a genuine commitment to community service — to overseeing the organization\'s resources, keeping ChAImp accountable, sustainable, and focused on mission over admin.'
+          'Cathy is a technology and operations executive with more than two decades of experience leading global teams and owning bottom-line results. She currently serves as a Partner and General Manager at Microsoft, where she leads quality and security strategy for Azure. Earlier in her career she held full profit-and-loss responsibility for K2\'s worldwide professional services organization, spanning offices in London, Singapore, South Africa, and Bellevue, and has held delivery and program leadership roles at companies including Nuance Communications and Cingular Wireless. Beyond her professional work, Cathy is active with several community-led nonprofits, including Special Olympics Washington and The Salvation Army Eastside Corps.'
         ],
+        role: 'As ChAImp\'s Treasurer, Cathy brings that record of financial and operational stewardship — along with a genuine commitment to community service — to overseeing the organization\'s resources, keeping ChAImp accountable, sustainable, and focused on mission over admin.',
         photo: 'Cathy_Oaks.JPG',
         photoAlt: 'Cathy Oaks Hayes, Founding Treasurer at ChAImp',
         linkedin: 'https://www.linkedin.com/in/cathyoaks/',
@@ -182,26 +163,42 @@
         email: 'cathy@chaimp.org'
       },
       {
-        name: 'Erik Øerum Hansen',
-        title: 'Founding Secretary &\nDirector, Customer Technical Implementation',
+        name: 'Erik Orum Hansen',
+        title: 'Secretary\nDirector of Customer Technical Implementation',
+        founding: true,
         bio: [
-          'Erik is a technology leader with 24 years at Microsoft, where he served as a Principal Engineering Manager leading globally dispersed teams and owning multiple worldwide services. Originally from Denmark and now based in Washington, he brings deep expertise across CRM, ERP, AI transformation, and large-scale engineering excellence, with a long record of building strong teams and delivering production-grade systems. After leaving Microsoft in July 2026, he continues to stay active in community work, including local dog rescue efforts.',
-          'As ChAImp\'s Secretary, Erik maintains official records, ensures proper notice and documentation for board proceedings, and certifies resolutions and filings. As Director of Customer Technical Implementation, he advises on delivery strategy for partner nonprofits, evaluates feasibility and timelines, and serves as a technical point of escalation — helping ensure ChAImp\'s solutions are well built and successfully deployed where they matter most.'
+          'Erik is a technology leader with 24 years at Microsoft, where he served as a Principal Engineering Manager leading globally dispersed teams and owning multiple worldwide services. Originally from Denmark and now based in Washington, he brings deep expertise across CRM, ERP, AI transformation, and large-scale engineering excellence, with a long record of building strong teams and delivering production-grade systems. After leaving Microsoft in July 2026, he continues to stay active in community work, including local dog rescue efforts.'
         ],
+        role: 'As ChAImp\'s Secretary, Erik maintains official records, ensures proper notice and documentation for board proceedings, and certifies resolutions and filings. As Director of Customer Technical Implementation, he advises on delivery strategy for partner nonprofits, evaluates feasibility and timelines, and serves as a technical point of escalation — helping ensure ChAImp\'s solutions are well built and successfully deployed where they matter most.',
         photo: 'Erik_Oerum_Hansen.png',
-        photoAlt: 'Erik Øerum Hansen, Founding Secretary & Director, Customer Technical Implementation at ChAImp',
+        photoAlt: 'Erik Orum Hansen, Founding Secretary and Director of Customer Technical Implementation at ChAImp',
         linkedin: 'https://www.linkedin.com/in/erik-%C3%B8rum-hansen-786a705/',
         linkedinLabel: 'Connect with Erik on LinkedIn',
         email: 'erik@chaimp.org'
       },
       {
+        name: 'Ashu Samra',
+        title: 'Director of Solution Development',
+        founding: true,
+        bio: [
+          'Ashu is a Senior Software Development Engineer at Amazon with nearly 20 years of experience building scalable, production-grade software. He brings deep expertise across cloud architecture, distributed systems, automation, and AI tooling — along with the product instinct to take early-stage ideas all the way to robust, shippable products.'
+        ],
+        role: 'As ChAImp\'s Director of Solution Development, Ashu helps shape the organization\'s technical strategy and system design, ensuring that what we build for nonprofits is engineered to last.',
+        photo: 'Ashu_Samra.jpg',
+        photoAlt: 'Ashu Samra, Founding Director of Solution Development at ChAImp',
+        linkedin: 'https://www.linkedin.com/in/ashumeet/',
+        linkedinLabel: 'Connect with Ashu on LinkedIn',
+        email: 'ashu@chaimp.org'
+      },
+      {
         name: 'Sarah Ciambrone',
-        title: 'Founding Director of Mission & Outreach',
+        title: 'Director of Mission & Outreach',
+        founding: true,
         bio: [
           'Sarah serves as Coordinator of the Washington Advisory Committee on Trafficking (WashACT), facilitating statewide collaboration among victim service providers, law enforcement, and community-based agencies to ensure survivors of human trafficking receive every resource available to them.',
-          'She has worked in the anti-trafficking movement since 2017, beginning at Rebuilding Hope! Sexual Assault Center for Pierce County, where she provided wraparound, trauma-informed services to survivors of commercial sexual exploitation and expanded the reach of its Sex Trafficking & Exploitation Program. She later coordinated Anti-Trafficking Initiatives at WestCoast Children\'s Clinic, training providers across the country and supporting agencies nationwide as they built capacity to identify and serve trafficking survivors.',
-          'As ChAImp\'s Founding Director of Mission & Outreach, Sarah brings deep experience in frontline service delivery and cross-sector collaboration, helping ensure our technology serves the realities of community-based nonprofit work.'
+          'She has worked in the anti-trafficking movement since 2017, beginning at Rebuilding Hope! Sexual Assault Center for Pierce County, where she provided wraparound, trauma-informed services to survivors of commercial sexual exploitation and expanded the reach of its Sex Trafficking & Exploitation Program. She later coordinated Anti-Trafficking Initiatives at WestCoast Children\'s Clinic, training providers across the country and supporting agencies nationwide as they built capacity to identify and serve trafficking survivors.'
         ],
+        role: 'As ChAImp\'s Director of Mission & Outreach, Sarah brings deep experience in frontline service delivery and cross-sector collaboration, helping ensure our technology serves the realities of community-based nonprofit work.',
         photo: 'Sarah_Ciambrone.jpg',
         photoAlt: 'Sarah Ciambrone, Founding Director of Mission & Outreach at ChAImp',
         linkedin: 'https://www.linkedin.com/in/sarahciambrone/',
@@ -234,6 +231,14 @@
       name.className = 'board-profile-name';
       name.textContent = member.name;
 
+      // Founding-board honorific rides as a pill, separate from the office title.
+      let pill = null;
+      if (member.founding) {
+        pill = document.createElement('span');
+        pill.className = 'board-profile-pill';
+        pill.textContent = 'Founding board';
+      }
+
       const title = document.createElement('p');
       title.className = 'board-profile-title';
       // A title may carry explicit line breaks as \n — see Erik's dual role.
@@ -249,6 +254,20 @@
         p.textContent = paragraph;
         bio.appendChild(p);
       });
+
+      // Their ChAImp contribution, pulled out as a highlighted callout so it
+      // reads as the point of the card, not a trailing afterthought.
+      let role = null;
+      if (member.role) {
+        role = document.createElement('div');
+        role.className = 'board-profile-role';
+        const roleLabel = document.createElement('span');
+        roleLabel.className = 'board-profile-role-label';
+        roleLabel.textContent = 'At ChAImp';
+        const roleText = document.createElement('p');
+        roleText.textContent = member.role;
+        role.append(roleLabel, roleText);
+      }
 
       const link = document.createElement('a');
       link.className = 'board-profile-link';
@@ -268,7 +287,15 @@
       links.className = 'board-profile-links';
       links.append(link, email);
 
-      card.append(avatar, name, title, bio, links);
+      // Anchor id = first name, lowercased — lets the home page deep-link
+      // straight to this person (board.html#erik) instead of the page top.
+      card.id = member.name.split(' ')[0].toLowerCase();
+
+      card.append(avatar, name, title);
+      if (pill) card.appendChild(pill);
+      card.append(bio);
+      if (role) card.appendChild(role);
+      card.append(links);
       return card;
     }
 
