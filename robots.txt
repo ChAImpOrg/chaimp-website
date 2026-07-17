@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# board.html is intentionally noindex (see its meta robots tag).
+# It stays crawlable so engines can read the noindex directive.
+
+Sitemap: https://chaimp.org/sitemap.xml

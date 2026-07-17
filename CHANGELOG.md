@@ -9,6 +9,27 @@ This project follows [Semantic Versioning](https://semver.org/).
 > after the fact would be a tidy fiction. 1.0.0 is marked as the pre-changelog
 > baseline and the record starts honestly from 1.0.1.
 
+## [1.3.0] — 2026-07-17
+
+### Added
+- **SEO / discoverability pass** across the public pages (`index.html`, `saas.html`):
+  - `<link rel="canonical">` on each page to consolidate ranking signals.
+  - **Open Graph** tags (`og:type`, `og:site_name`, `og:locale`, `og:url`, `og:title`,
+    `og:description`, `og:image` + dimensions/alt) so shared links render rich previews
+    on LinkedIn, Slack, Facebook, etc.
+  - **Twitter/X Card** tags (`summary_large_image`) for rich previews on X.
+  - **`WebSite`** schema.org JSON-LD on the home page (alongside the existing
+    `Organization` block).
+- **`robots.txt`** — allows all crawlers and points to the sitemap.
+- **`sitemap.xml`** — lists the two indexable pages (`/` and `/saas.html`); `board.html`
+  is excluded as it is intentionally `noindex`.
+- **"Follow Us on LinkedIn"** link in the home-page footer Contact column, pointing at the
+  ChAImp company page (`linkedin.com/company/chaimp`).
+
+### Changed
+- `sameAs` LinkedIn URLs in the Organization JSON-LD normalized to the canonical
+  `https://www.linkedin.com/company/chaimp` form.
+
 ## [1.2.3] — 2026-07-17
 
 ### Changed
