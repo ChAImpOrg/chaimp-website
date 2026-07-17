@@ -9,6 +9,12 @@ This project follows [Semantic Versioning](https://semver.org/).
 > after the fact would be a tidy fiction. 1.0.0 is marked as the pre-changelog
 > baseline and the record starts honestly from 1.0.1.
 
+## [1.2.3] — 2026-07-17
+
+### Changed
+- **"Built with" pills** (home page footer strip) trimmed: removed `Claude Code` and `GitHub Copilot`,
+  and `GitHub Copilot` → `GitHub`. Now reads Claude · GitHub · React · Vercel.
+
 ## [1.2.2] — 2026-07-17
 
 ### Changed
