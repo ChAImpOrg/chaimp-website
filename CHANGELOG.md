@@ -9,6 +9,57 @@ This project follows [Semantic Versioning](https://semver.org/).
 > after the fact would be a tidy fiction. 1.0.0 is marked as the pre-changelog
 > baseline and the record starts honestly from 1.0.1.
 
+## [1.2.1] — 2026-07-17
+
+### Changed
+- **Board titles now separate office from honorific.** Every "Founding X" title is split into the
+  clean office (`President`, `Treasurer`, `Secretary`, `Director of …`) plus a small **`Founding board`**
+  pill; James carries a gold **`Founder`** pill instead. Applied on both `index.html#board` and the
+  `board.html` profile cards. Removes the repetition of "Founding" down the column and reads as the
+  honorific it is. Bio callout text drops the now-redundant "Founding" too (the pill states it).
+- **Board ordering: officers first, then directors, each alphabetical by name.** Andrew (President),
+  Cathy (Treasurer), Erik (Secretary), then Ashu (Director of Solution Development) and Sarah
+  (Director of Mission & Outreach). James stays pinned first on `index.html` as ex-officio.
+- **Ashu Samra → Director of Solution Development**; **Erik** regains his second role,
+  **Director of Customer Technical Implementation**, as a second title line under Secretary.
+- **Erik Øerum Hansen → Erik Orum Hansen** in all displayed names and alt text (headshot file and
+  LinkedIn URL slug unchanged — both are real identifiers). Historical CHANGELOG entries keep the
+  original spelling.
+- **Board layout is now an even grid, not lopsided.** Home page `#board` goes 4+2 → **3×2**
+  (3 cols → 2 cols ≤900px → 1 col ≤600px, centred, `max-width: 960px`). The `board.html` profile
+  grid goes 2+2+1 → **3+2** (flex-basis 380→320, `max-width` 480→360).
+
+### Added
+- **"At ChAImp" role callout** on each `board.html` profile card. The person's contribution — previously
+  the trailing bio paragraph, easy to miss — is pulled into a highlighted, teal-accented box so what
+  they *do* here reads as the point of the card, not an afterthought. Driven by a new `role` field.
+- **Deep links from the home page to each board member.** "Read _X_'s full bio →" now targets
+  `board.html#<firstname>` (each profile card carries an `id`), landing on that person instead of the
+  page top. Cards get `scroll-margin-top` so the fixed nav doesn't overlap the anchored card.
+
+## [1.2.0] — 2026-07-17
+
+### Added
+- **Single-source site navigation** (`nav.js`). The nav bar was hardcoded, three times, in
+  `index.html`, `board.html`, and `saas.html` — and had already drifted: the **Board** link
+  existed only on `index.html`, so from the Solutions page or a board profile there was no way
+  back to the board section. `nav.js` now injects one nav into a `<nav id="site-nav">` placeholder
+  on every page, so the markup lives in exactly one place and can't drift again.
+  - Anchor links resolve correctly off the home page (`#board` → `index.html#board`, etc.).
+  - Active-page state: **Our Solutions** is highlighted on `saas.html`, **Board** on `board.html`,
+    each marked `aria-current` for assistive tech.
+  - Scroll-spy on the home page highlights the section currently in view (IntersectionObserver;
+    the observer is deferred to `DOMContentLoaded` because `nav.js` runs inline before the
+    sections below it are parsed).
+
+### Changed
+- The `<nav>…</nav>` block in `index.html`, `board.html`, and `saas.html` is replaced by the
+  `<nav id="site-nav">` placeholder plus `<script src="nav.js"></script>`. Existing nav CSS
+  (inline per page) is unchanged; only the `.nav-links a.active` rule is added, injected by `nav.js`.
+
+### Known gaps (unchanged by this release)
+- Mobile still hides `.nav-links` with no hamburger menu (pre-existing behaviour, out of scope here).
+
 ## [1.1.0] — 2026-07-16
 
 ### Added

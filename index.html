@@ -162,7 +162,7 @@
     .founder-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .founder-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 0.25rem; }
     .founder-title { font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; }
-    .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .board-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; max-width: 960px; margin-left: auto; margin-right: auto; }
     .board-card { background: var(--cream); border-radius: 24px; padding: 2.5rem 1.75rem; text-align: center; border: 1px solid var(--light-gray); }
     a.board-card { transition: transform 0.2s, box-shadow 0.2s; }
     a.board-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,27,42,0.08); }
@@ -170,7 +170,10 @@
     .board-avatar { width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: var(--teal); color: white; font-family: 'DM Serif Display', serif; font-size: 2.1rem; letter-spacing: 0.05em; border: 3px solid var(--teal); box-shadow: 0 8px 24px rgba(79,179,169,0.2); overflow: hidden; }
     .board-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .board-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.25rem; white-space: nowrap; }
-    .board-title { font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .board-title { font-size: 0.85rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .board-pill { display: inline-block; padding: 0.22rem 0.7rem; margin-bottom: 0.75rem; border-radius: 100px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid transparent; }
+    .board-pill--founding { background: rgba(79,179,169,0.12); color: var(--teal); border-color: rgba(79,179,169,0.28); }
+    .board-pill--founder { background: var(--color-accent-gold-tint); color: var(--color-accent-gold-dark); border-color: rgba(218,165,32,0.35); }
     .board-bio { font-size: 0.9rem; color: var(--gray); font-style: italic; }
     .board-email { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; padding: 0.45rem 1rem; font-size: 0.85rem; font-weight: 600; color: var(--teal); text-decoration: none; border: 1px solid var(--teal); border-radius: 999px; transition: background 0.2s, color 0.2s; }
     .board-email:hover { background: var(--teal); color: white; }
@@ -246,32 +249,22 @@
       .serve-grid { grid-template-columns: 1fr; }
       .promise-pillars { grid-template-columns: 1fr; }
       .founder-grid { grid-template-columns: 1fr; }
-      .board-grid { grid-template-columns: 1fr; }
+      .board-grid { grid-template-columns: repeat(2, 1fr); }
       footer { padding: 3rem 1.5rem 2rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer-legal { flex-direction: column; align-items: flex-start; text-align: left; }
+    }
+    @media (max-width: 600px) {
+      .board-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">
-      <img src="ChAImp_Logo.png" alt="ChAImp logo" />
-      <span class="nav-wordmark" aria-label="ChAImp, pronounced Champ" title="/tʃæmp/">Ch<span>AI</span>mp</span>
-      <span class="nav-pron" aria-hidden="true">("Champ")</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#services">What We Do</a></li>
-      <li><a href="saas.html">Our Solutions</a></li>
-      <li><a href="#serve">Who We Serve</a></li>
-      <li><a href="#casestudies">Case Studies</a></li>
-      <li><a href="#founder">About</a></li>
-      <li><a href="#board">Board</a></li>
-      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-    </ul>
-  </nav>
+  <!-- Navigation is injected by nav.js (single source of truth for all pages) -->
+  <nav id="site-nav" aria-label="Primary"></nav>
+  <script src="nav.js"></script>
 
   <!-- HERO -->
   <div class="hero">
@@ -498,37 +491,43 @@
       <a href="#founder" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
         <div class="board-avatar"><img src="James_Whelan.jpg" alt="James Whelan, Founder & Executive Director of ChAImp" /></div>
         <div class="board-name">James Whelan</div>
-        <div class="board-title">Founder &amp; Executive Director · Ex-Officio</div>
+        <div class="board-title">Executive Director · Ex-Officio</div>
+        <div class="board-pill board-pill--founder">Founder</div>
         <p class="board-bio" style="color: var(--teal); font-weight: 600;">See About above <span class="accent-gold">→</span></p>
       </a>
-      <a href="board.html" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
+      <a href="board.html#andrew" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
         <div class="board-avatar"><img src="Andrew_Chesser.png" alt="Andrew Chesser, Founding President at ChAImp" /></div>
         <div class="board-name">Andrew Chesser</div>
-        <div class="board-title">Founding President</div>
+        <div class="board-title">President</div>
+        <div class="board-pill board-pill--founding">Founding board</div>
         <p class="board-bio" style="color: var(--teal); font-weight: 600;">Read Andrew's full bio <span class="accent-gold">→</span></p>
       </a>
-      <a href="board.html" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
-        <div class="board-avatar"><img src="Ashu_Samra.jpg" alt="Ashu Samra, Founding Technical Lead at ChAImp" /></div>
-        <div class="board-name">Ashu Samra</div>
-        <div class="board-title">Founding Technical Lead</div>
-        <p class="board-bio" style="color: var(--teal); font-weight: 600;">Read Ashu's full bio <span class="accent-gold">→</span></p>
-      </a>
-      <a href="board.html" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
+      <a href="board.html#cathy" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
         <div class="board-avatar"><img src="Cathy_Oaks.JPG" alt="Cathy Oaks Hayes, Founding Treasurer at ChAImp" /></div>
         <div class="board-name">Cathy Oaks Hayes</div>
-        <div class="board-title">Founding Treasurer</div>
+        <div class="board-title">Treasurer</div>
+        <div class="board-pill board-pill--founding">Founding board</div>
         <p class="board-bio" style="color: var(--teal); font-weight: 600;">Read Cathy's full bio <span class="accent-gold">→</span></p>
       </a>
-      <a href="board.html" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
-        <div class="board-avatar"><img src="Erik_Oerum_Hansen.png" alt="Erik Øerum Hansen, Founding Secretary & Director, Customer Technical Implementation at ChAImp" /></div>
-        <div class="board-name">Erik Øerum Hansen</div>
-        <div class="board-title">Founding Secretary &amp;<br>Director, Customer Technical Implementation</div>
+      <a href="board.html#erik" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
+        <div class="board-avatar"><img src="Erik_Oerum_Hansen.png" alt="Erik Orum Hansen, Founding Secretary and Director of Customer Technical Implementation at ChAImp" /></div>
+        <div class="board-name">Erik Orum Hansen</div>
+        <div class="board-title">Secretary<br>Director of Customer Technical Implementation</div>
+        <div class="board-pill board-pill--founding">Founding board</div>
         <p class="board-bio" style="color: var(--teal); font-weight: 600;">Read Erik's full bio <span class="accent-gold">→</span></p>
       </a>
-      <a href="board.html" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
+      <a href="board.html#ashu" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
+        <div class="board-avatar"><img src="Ashu_Samra.jpg" alt="Ashu Samra, Founding Director of Solution Development at ChAImp" /></div>
+        <div class="board-name">Ashu Samra</div>
+        <div class="board-title">Director of Solution Development</div>
+        <div class="board-pill board-pill--founding">Founding board</div>
+        <p class="board-bio" style="color: var(--teal); font-weight: 600;">Read Ashu's full bio <span class="accent-gold">→</span></p>
+      </a>
+      <a href="board.html#sarah" class="board-card fade-up" style="text-decoration: none; color: inherit; display: block;">
         <div class="board-avatar"><img src="Sarah_Ciambrone.jpg" alt="Sarah Ciambrone, Founding Director of Mission & Outreach at ChAImp" /></div>
         <div class="board-name">Sarah Ciambrone</div>
-        <div class="board-title">Founding Director of Mission &amp; Outreach</div>
+        <div class="board-title">Director of Mission &amp; Outreach</div>
+        <div class="board-pill board-pill--founding">Founding board</div>
         <p class="board-bio" style="color: var(--teal); font-weight: 600;">Read Sarah's full bio <span class="accent-gold">→</span></p>
       </a>
     </div>
