@@ -1,7 +1,7 @@
 name: gitleaks
 
 # Scans the diff of every PR and every push to main for secrets using the
-# upstream gitleaks binary (no third-party Action wrapper â€” gitleaks-action
+# upstream gitleaks binary (no third-party Action wrapper — gitleaks-action
 # requires a paid licence for org accounts). Failing this check blocks merge.
 #
 # Do not "simplify" this back to gitleaks-action. The binary is deliberate.
@@ -19,6 +19,10 @@ permissions:
 # June 16, 2026. Force Node 24 now.
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   scan:
